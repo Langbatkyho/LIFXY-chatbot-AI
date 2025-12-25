@@ -48,6 +48,251 @@ LIFXY-chatbot-AI/
 │   │   ├── utils/
 │   │   └── server.js
 │   ├── package.json
+│   ├── render.yaml
+│   ├── .env.example
+│   └── README.md
+├── frontend/
+│   ├── ChatWidget.jsx
+│   ├── ChatWidget.css
+│   ├── chatbot.js
+│   └── README.md
+├── DEPLOYMENT.md
+├── QUICK_START.md
+└── README.md
+```
+
+---
+
+## Step 2: Lấy API Keys
+
+### 2.1 Google Gemini API Key
+
+```bash
+# Vào https://ai.google.dev
+1. Sign in với Google account
+2. Click "Get API Key"
+3. Select hoặc create project
+4. Copy API key
+5. Lưu vào file
+```
+
+### 2.2 Haravan API Credentials
+
+```bash
+# Vào https://admin.myharavan.com
+1. Go to Settings → API & Integrations
+2. Create API Access Token
+3. Copy Shop ID
+4. Copy API Key
+5. Lưu vào file
+```
+
+---
+
+## Step 3: Deploy lên Render
+
+### 3.1 Create PostgreSQL Database
+
+Vào https://dashboard.render.com:
+
+```
+1. Click "New +" → "PostgreSQL"
+2. Name: lifxy-chatbot-db
+3. Database: lifxy_chatbot
+4. User: postgres
+5. Region: Singapore (gần nhất)
+6. Plan: Free
+7. Click "Create"
+8. ⏳ Chờ 2-3 phút
+
+Lưu: External Database URL
+```
+
+### 3.2 Create Web Service
+
+Vào https://dashboard.render.com:
+
+```
+1. Click "New +" → "Web Service"
+2. Connect GitHub repository: LIFXY-chatbot-AI
+3. Configuration:
+   - Name: lifxy-chatbot-api
+   - Runtime: Node
+   - Root Directory: backend
+   - Build Command: npm install
+   - Start Command: npm start
+   - Instance Type: Free
+4. Click "Create Web Service"
+5. ⏳ Chờ 3-5 phút build & deploy
+```
+
+### 3.3 Configure Environment Variables
+
+Trong Render Dashboard → lifxy-chatbot-api → Settings → Environment:
+
+```
+NODE_ENV: production
+PORT: 3001
+GEMINI_API_KEY: [your_gemini_api_key]
+HARAVAN_SHOP_ID: [your_shop_id]
+HARAVAN_API_KEY: [your_haravan_api_key]
+DATABASE_URL: [postgresql_url_from_step_3.1]
+ALLOWED_ORIGINS: https://carmate.myharavan.com
+LOG_LEVEL: info
+```
+
+Click "Save" cho mỗi variable
+
+---
+
+## Step 4: Verify Deployment
+
+### 4.1 Check Health
+
+```bash
+curl https://lifxy-chatbot-api.onrender.com/health
+
+# Response:
+{
+  "status": "ok",
+  "service": "lifxy-chatbot-backend",
+  "version": "1.0.0",
+  "timestamp": "2025-12-25T..."
+}
+```
+
+### 4.2 Sync Products from Haravan
+
+```bash
+curl -X POST https://lifxy-chatbot-api.onrender.com/api/admin/sync-products \
+  -H "Authorization: Bearer YOUR_HARAVAN_API_KEY"
+
+# Response:
+{
+  "success": true,
+  "message": "Successfully synced 200 products",
+  "count": 200
+}
+```
+
+### 4.3 Test Chat API
+
+```bash
+curl -X POST https://lifxy-chatbot-api.onrender.com/api/chat/message \
+  -H "Content-Type: application/json" \
+  -d '{
+    "message": "Tôi cần lốp xe tốt",
+    "sessionId": "test_123",
+    "customerName": "Test"
+  }'
+
+# Response:
+{
+  "response": "Dựa trên nhu cầu của bạn...",
+  "referencedProducts": [...],
+  "sessionId": "test_123"
+}
+```
+
+---
+
+## Step 5: Deploy Widget
+
+### 5.1 Host on Vercel (Recommended)
+
+```bash
+# Go to https://vercel.com
+1. Import repository
+2. Select root: frontend
+3. Deploy
+4. Copy your URL: https://your-frontend.vercel.app
+```
+
+### 5.2 Or Host on Render
+
+```bash
+# Create static site service on Render
+1. Dashboard → New → Static Site
+2. Connect repository
+3. Root Directory: frontend
+4. Build Command: (leave empty)
+5. Deploy
+```
+
+---
+
+## Step 6: Integrate into Website
+
+Thêm script này vào website (trước closing </body>):
+
+```html
+<script>
+  window.CarMateChat = {
+    apiUrl: 'https://lifxy-chatbot-api.onrender.com',
+    theme: 'light'
+  };
+</script>
+<script src="https://your-widget-url/chatbot.js"></script>
+```
+
+---
+
+## Troubleshooting
+
+### Problem: Database Connection Failed
+
+```bash
+# 1. Check DATABASE_URL format
+postgresql://user:password@host:port/dbname
+
+# 2. Verify in Render logs
+# 3. Test connection locally
+psql "your_database_url"
+```
+
+### Problem: Products Not Showing
+
+```bash
+# 1. Run sync products
+curl -X POST https://lifxy-chatbot-api.onrender.com/api/admin/sync-products \
+  -H "Authorization: Bearer YOUR_HARAVAN_API_KEY"
+
+# 2. Check database
+curl https://lifxy-chatbot-api.onrender.com/api/products
+```
+
+### Problem: CORS Error
+
+```bash
+# Update ALLOWED_ORIGINS in env vars:
+https://carmate.myharavan.com,https://www.carmate.myharavan.com
+
+# Restart service on Render dashboard
+```
+
+---
+
+## Cost
+
+| Item | Free | Paid |
+|------|------|------|
+| Web Service | 512MB, shared CPU | $7/month |
+| PostgreSQL | 100MB | $9/month |
+| Gemini API | Pay per use | ~$5-10/month |
+| **Total** | **$0** | **~$20** |
+
+---
+
+## Next Steps
+
+✅ Backend deployed  
+✅ Database configured  
+✅ Products synced  
+⏳ Monitor performance  
+⏳ Optimize prompts  
+⏳ Scale if needed
+
+**Questions?** Check [backend/README.md](backend/README.md) and [frontend/README.md](frontend/README.md)
 │   ├── .env.example
 │   ├── render.yaml
 │   ├── .gitignore
