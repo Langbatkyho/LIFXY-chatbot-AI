@@ -27,5 +27,6 @@ services:
     name: lifxy-chatbot-widget
     plan: free
     buildCommand: ''
-    publishDirectory: frontend
+    rootDirectory: frontend
+    publishDirectory: /
     envVars: []
