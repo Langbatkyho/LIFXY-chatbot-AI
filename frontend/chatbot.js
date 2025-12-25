@@ -29,10 +29,10 @@
   container.id = 'carmate-chatbot-root';
   document.body.appendChild(container);
 
-  // Load CSS
+  // Load CSS (use local/relative CSS so widget works when hosted as a static site)
   const style = document.createElement('link');
   style.rel = 'stylesheet';
-  style.href = 'https://carmate.myharavan.com/ChatWidget.css';
+  style.href = 'ChatWidget.css';
   document.head.appendChild(style);
 
   // Load and render React component (if using React)
