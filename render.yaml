@@ -28,5 +28,5 @@ services:
     plan: free
     buildCommand: ''
     rootDirectory: frontend
-    publishDirectory: /
+    publishDirectory: .
     envVars: []
