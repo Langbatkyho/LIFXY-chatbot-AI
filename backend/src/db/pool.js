@@ -3,10 +3,16 @@ import config from '../config/index.js';
 
 const { Pool } = pkg;
 
-const pool = new Pool({
+const poolOptions = {
   connectionString: config.database.url,
   ...config.database.pool,
-});
+};
+
+if (config.database.ssl) {
+  poolOptions.ssl = config.database.ssl;
+}
+
+const pool = new Pool(poolOptions);
 
 pool.on('error', (err) => {
   console.error('Unexpected error on idle client', err);

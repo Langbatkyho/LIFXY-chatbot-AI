@@ -12,6 +12,7 @@ const config = {
     model: 'gemini-1.5-flash',
     temperature: 0.7,
     maxTokens: 1024,
+    apiUrl: process.env.GEMINI_API_URL || 'https://generativelanguage.googleapis.com/v1',
   },
 
   // Haravan
@@ -29,6 +30,10 @@ const config = {
       idleTimeoutMillis: 30000,
       connectionTimeoutMillis: 2000,
     },
+    // Enable SSL when running against managed DBs (set DATABASE_SSL=true)
+    ssl: process.env.DATABASE_SSL === 'true' ? {
+      rejectUnauthorized: process.env.DB_SSL_REJECT_UNAUTHORIZED !== 'false'
+    } : null,
   },
 
   // Redis (optional)
