@@ -1,0 +1,31 @@
+# Render services configuration: backend (existing) + static site for frontend widget
+
+services:
+  - type: web_service
+    name: lifxy-chatbot-backend
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3001
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: HARAVAN_SHOP_ID
+        sync: false
+      - key: HARAVAN_API_KEY
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: ALLOWED_ORIGINS
+        value: https://carmate.myharavan.com
+
+  - type: static_site
+    name: lifxy-chatbot-widget
+    plan: free
+    buildCommand: ''
+    publishDirectory: frontend
+    envVars: []

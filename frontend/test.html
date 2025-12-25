@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>CarMate Chatbot - Test</title>
+    <link rel="stylesheet" href="ChatWidget.css">
+    <style>body{font-family:Inter,system-ui,Arial,Helvetica,sans-serif;padding:24px}</style>
+  </head>
+  <body>
+    <h2>CarMate Chatbot - Widget Test Page</h2>
+    <p>This page loads the widget and points it to the deployed backend.</p>
+
+    <script>
+      // Replace with your deployed backend URL
+      window.CarMateChat = {
+        apiUrl: 'https://<YOUR_BACKEND>.onrender.com',
+        theme: 'light'
+      };
+    </script>
+
+    <script src="chatbot.js"></script>
+    <p style="margin-top:24px;color:#666">Open browser console to observe network requests.</p>
+  </body>
+</html>
