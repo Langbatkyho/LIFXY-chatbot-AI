@@ -1,23 +1,32 @@
 import axios from 'axios';
 import config from '../config/index.js';
 
-// Build Haravan API base URL: {shopUrl}/admin/api/{version}
+// Build Haravan API base URL with sensible defaults for CHAPI
 const getHaravanBaseUrl = () => {
-  const shopUrl = config.haravan.shopUrl;
-  const apiVersion = config.haravan.apiVersion || '2024-07';
-  
-  if (!shopUrl) {
-    throw new Error('HARAVAN_SHOP_URL is not configured');
+  const version = config.haravan.apiVersion || '2024-07';
+
+  // If explicit base is provided, use it
+  if (config.haravan.apiBase) {
+    return config.haravan.apiBase.replace(/\/$/, '');
   }
-  
-  // Remove trailing slash if present
-  const cleanUrl = shopUrl.replace(/\/$/, '');
-  return `${cleanUrl}/admin/api/${apiVersion}`;
+
+  // Prefer CHAPI by default (most tokens target CHAPI)
+  const chapiBase = `https://chapi.myharavan.com/${version}`;
+
+  // If shopUrl is provided AND you intend to use shop-specific admin API,
+  // construct admin API path; otherwise fallback to CHAPI.
+  if (config.haravan.shopUrl) {
+    const cleanShop = config.haravan.shopUrl.replace(/\/$/, '');
+    return `${cleanShop}/admin/api/${version}`;
+  }
+
+  return chapiBase;
 };
 
 const haravanClient = axios.create({
   baseURL: getHaravanBaseUrl(),
   headers: {
+    // Haravan REST typically expects X-Access-Token
     'X-Access-Token': config.haravan.accessToken,
     'Content-Type': 'application/json',
   },
@@ -31,7 +40,7 @@ export const fetchAllProducts = async (limit = 250) => {
     // Debug logging
     const baseUrl = getHaravanBaseUrl();
     const token = config.haravan.accessToken ? '✓ SET' : '❌ NOT_SET';
-    console.log(`🔗 Haravan Shop URL: ${config.haravan.shopUrl}`);
+    console.log(`🔗 Haravan Shop URL: ${config.haravan.shopUrl || '(not set, using CHAPI)'}`);
     console.log(`📡 API Base URL: ${baseUrl}`);
     console.log(`🔑 Access Token: ${token}`);
 

@@ -18,8 +18,12 @@ const config = {
   // Haravan
   haravan: {
     accessToken: process.env.HARAVAN_ACCESS_TOKEN,
-    shopUrl: process.env.HARAVAN_SHOP_URL, // e.g., https://carmate.myharavan.com
-    apiVersion: '2024-07',
+    shopUrl: process.env.HARAVAN_SHOP_URL, // optional: https://carmate.myharavan.com
+    apiVersion: process.env.HARAVAN_API_VERSION || '2024-07',
+    // Optional explicit API base override. If not set, service will
+    // default to CHAPI (https://chapi.myharavan.com/{version}) or
+    // shopUrl + /admin/api/{version} when shopUrl is provided.
+    apiBase: process.env.HARAVAN_API_BASE || null,
   },
 
   // Database
