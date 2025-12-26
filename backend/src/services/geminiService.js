@@ -5,12 +5,22 @@ const GEMINI_BASE = config.gemini.apiUrl; // e.g. https://generativelanguage.goo
 const MODEL = config.gemini.model;
 
 async function callGemini(prompt, options = {}) {
-  const url = `${GEMINI_BASE}/models/${MODEL}:generateText?key=${config.gemini.apiKey}`;
+  const url = `${GEMINI_BASE}/models/${MODEL}:generateContent?key=${config.gemini.apiKey}`;
 
   const body = {
-    prompt: prompt,
-    temperature: options.temperature ?? config.gemini.temperature,
-    maxOutputTokens: options.maxOutputTokens ?? config.gemini.maxTokens,
+    contents: [
+      {
+        parts: [
+          {
+            text: prompt,
+          },
+        ],
+      },
+    ],
+    generationConfig: {
+      temperature: options.temperature ?? config.gemini.temperature,
+      maxOutputTokens: options.maxOutputTokens ?? config.gemini.maxTokens,
+    },
   };
 
   try {
@@ -21,21 +31,16 @@ async function callGemini(prompt, options = {}) {
       timeout: 60000,
     });
 
-    if (resp.data?.candidates?.length) {
-      return resp.data.candidates.map(c => c.content).join('\n');
-    }
-
-    if (resp.data?.output?.[0]?.content?.[0]?.text) {
-      return resp.data.output[0].content[0].text;
-    }
-
-    if (resp.data?.text) {
-      return resp.data.text;
+    if (resp.data?.candidates?.length > 0) {
+      const candidate = resp.data.candidates[0];
+      if (candidate.content?.parts?.length > 0) {
+        return candidate.content.parts.map(p => p.text).join('\n');
+      }
     }
 
     return JSON.stringify(resp.data);
   } catch (err) {
-    console.error('Gemini REST error:', err?.response?.data || err.message);
+    console.error('Gemini REST error:', err?.response?.status, err?.response?.data || err.message);
     throw err;
   }
 }
