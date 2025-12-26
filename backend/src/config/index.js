@@ -26,6 +26,9 @@ const config = {
     apiBase: process.env.HARAVAN_API_BASE || null,
     // Enable automatic fallback to CHAPI when shop admin API returns 404/401
     fallbackToChapi: process.env.HARAVAN_FALLBACK_TO_CHAPI !== 'false',
+    // Explicit API mode per Haravan docs: 'commerce' | 'admin' | 'chapi'
+    // If unset, the service will infer: admin when shopUrl is set; otherwise commerce.
+    apiMode: process.env.HARAVAN_API_MODE || null,
   },
 
   // Database

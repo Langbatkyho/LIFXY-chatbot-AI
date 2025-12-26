@@ -1,7 +1,7 @@
 import axios from 'axios';
 import config from '../config/index.js';
 
-// Build Haravan API base URL with sensible defaults for CHAPI
+// Build Haravan API base URL: supports 'commerce', 'admin', 'chapi'
 const getHaravanBaseUrl = () => {
   const version = config.haravan.apiVersion || '2024-07';
 
@@ -10,17 +10,22 @@ const getHaravanBaseUrl = () => {
     return config.haravan.apiBase.replace(/\/$/, '');
   }
 
-  // Prefer CHAPI by default (most tokens target CHAPI)
-  const chapiBase = `https://chapi.myharavan.com/${version}`;
+  const mode = (config.haravan.apiMode || (config.haravan.shopUrl ? 'admin' : 'commerce')).toLowerCase();
 
-  // If shopUrl is provided AND you intend to use shop-specific admin API,
-  // construct admin API path; otherwise fallback to CHAPI.
-  if (config.haravan.shopUrl) {
+  if (mode === 'commerce') {
+    return 'https://apis.haravan.com/com';
+  }
+
+  if (mode === 'admin') {
+    if (!config.haravan.shopUrl) {
+      throw new Error('HARAVAN_SHOP_URL is required for admin API mode');
+    }
     const cleanShop = config.haravan.shopUrl.replace(/\/$/, '');
     return `${cleanShop}/admin/api/${version}`;
   }
 
-  return chapiBase;
+  // mode === 'chapi'
+  return `https://chapi.myharavan.com/${version}`;
 };
 
 const createHaravanClient = (base) => axios.create({
@@ -41,8 +46,9 @@ export const fetchAllProducts = async (limit = 250) => {
     // Debug logging
     const baseUrl = getHaravanBaseUrl();
     const token = config.haravan.accessToken ? '✓ SET' : '❌ NOT_SET';
-    console.log(`🔗 Haravan Shop URL: ${config.haravan.shopUrl || '(not set, using CHAPI)'}`);
+    console.log(`🔗 Haravan Shop URL: ${config.haravan.shopUrl || '(not set)'}`);
     console.log(`📡 API Base URL: ${baseUrl}`);
+    console.log(`🧭 API Mode: ${config.haravan.apiMode || (config.haravan.shopUrl ? 'admin' : 'commerce')}`);
     console.log(`🔑 Access Token: ${token}`);
 
     const params = {
