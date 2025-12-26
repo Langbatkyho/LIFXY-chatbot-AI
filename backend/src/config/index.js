@@ -12,7 +12,7 @@ const config = {
     model: 'gemini-pro',
     temperature: 0.7,
     maxTokens: 1024,
-    apiUrl: process.env.GEMINI_API_URL || 'https://generativelanguage.googleapis.com/v1',
+    apiUrl: process.env.GEMINI_API_URL || 'https://generativelanguage.googleapis.com/v1beta',
   },
 
   // Haravan
