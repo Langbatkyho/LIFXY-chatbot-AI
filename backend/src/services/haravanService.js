@@ -14,6 +14,13 @@ const haravanClient = axios.create({
  */
 export const fetchAllProducts = async (limit = 250) => {
   try {
+    // Debug logging
+    const url = config.haravan.shopUrl || 'NOT_SET';
+    const token = config.haravan.accessToken ? '✓ SET' : '❌ NOT_SET';
+    console.log(`🔗 Haravan Shop URL: ${url}`);
+    console.log(`🔑 Haravan Access Token: ${token}`);
+    console.log(`📡 Calling: ${url}/products.json`);
+
     const response = await haravanClient.get('/products.json', {
       params: {
         limit: limit,
@@ -23,7 +30,11 @@ export const fetchAllProducts = async (limit = 250) => {
 
     return response.data.products || [];
   } catch (error) {
-    console.error('Error fetching products from Haravan:', error.message);
+    console.error('❌ Error fetching products from Haravan:');
+    console.error('   Status:', error?.response?.status);
+    console.error('   Message:', error.message);
+    console.error('   URL:', error?.config?.url);
+    console.error('   Full error:', error?.response?.data);
     throw error;
   }
 };
