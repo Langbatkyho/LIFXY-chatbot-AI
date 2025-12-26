@@ -9,7 +9,7 @@ const config = {
   // Gemini AI
   gemini: {
     apiKey: process.env.GEMINI_API_KEY,
-    model: 'gemini-1.5-pro',
+    model: 'gemini-1.5-flash',
     temperature: 0.7,
     maxTokens: 1024,
     apiUrl: process.env.GEMINI_API_URL || 'https://generativelanguage.googleapis.com/v1beta',
