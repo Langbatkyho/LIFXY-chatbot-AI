@@ -13,10 +13,10 @@ const router = express.Router();
 router.post('/sync-products', async (req, res) => {
   try {
     const authHeader = req.headers.authorization;
-    const apiKey = process.env.HARAVAN_API_KEY;
+    const accessToken = process.env.HARAVAN_ACCESS_TOKEN;
 
     // Simple auth check
-    if (!authHeader || !authHeader.includes(apiKey)) {
+    if (!authHeader || !authHeader.includes(accessToken)) {
       return res.status(401).json({
         error: 'Unauthorized',
       });
@@ -56,9 +56,9 @@ router.post('/sync-products', async (req, res) => {
 router.get('/stats', async (req, res) => {
   try {
     const authHeader = req.headers.authorization;
-    const apiKey = process.env.HARAVAN_API_KEY;
+    const accessToken = process.env.HARAVAN_ACCESS_TOKEN;
 
-    if (!authHeader || !authHeader.includes(apiKey)) {
+    if (!authHeader || !authHeader.includes(accessToken)) {
       return res.status(401).json({
         error: 'Unauthorized',
       });

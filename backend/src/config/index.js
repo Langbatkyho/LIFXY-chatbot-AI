@@ -17,9 +17,8 @@ const config = {
 
   // Haravan
   haravan: {
-    shopId: process.env.HARAVAN_SHOP_ID,
-    apiKey: process.env.HARAVAN_API_KEY,
-    baseUrl: 'https://chapi.myharavan.com/2024-07',
+    accessToken: process.env.HARAVAN_ACCESS_TOKEN,
+    shopUrl: process.env.HARAVAN_SHOP_URL || 'https://chapi.myharavan.com/2024-07',
   },
 
   // Database

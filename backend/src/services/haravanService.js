@@ -2,9 +2,9 @@ import axios from 'axios';
 import config from '../config/index.js';
 
 const haravanClient = axios.create({
-  baseURL: config.haravan.baseUrl,
+  baseURL: config.haravan.shopUrl,
   headers: {
-    'Authorization': `Bearer ${config.haravan.apiKey}`,
+    'Authorization': `Bearer ${config.haravan.accessToken}`,
     'Content-Type': 'application/json',
   },
 });
