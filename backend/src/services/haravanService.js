@@ -23,10 +23,9 @@ const getHaravanBaseUrl = () => {
   return chapiBase;
 };
 
-const haravanClient = axios.create({
-  baseURL: getHaravanBaseUrl(),
+const createHaravanClient = (base) => axios.create({
+  baseURL: base,
   headers: {
-    // Haravan admin API typically accepts either header form
     'X-Access-Token': config.haravan.accessToken,
     'Authorization': `Bearer ${config.haravan.accessToken}`,
     'Content-Type': 'application/json',
@@ -55,10 +54,24 @@ export const fetchAllProducts = async (limit = 250) => {
     const fullUrl = `${baseUrl}/products.json`;
     console.log(`➡️  Request: GET ${fullUrl} params=${JSON.stringify(params)}`);
 
-    const response = await haravanClient.get('/products.json', { params });
-
-    console.log(`✅ Successfully fetched ${response.data.products?.length || 0} products from Haravan`);
-    return response.data.products || [];
+    let client = createHaravanClient(baseUrl);
+    try {
+      const response = await client.get('/products.json', { params });
+      console.log(`✅ Successfully fetched ${response.data.products?.length || 0} products from Haravan`);
+      return response.data.products || [];
+    } catch (error) {
+      const status = error?.response?.status;
+      const shouldFallback = config.haravan.fallbackToChapi && (status === 404 || status === 401);
+      if (shouldFallback) {
+        const fallbackBase = `https://chapi.myharavan.com/${config.haravan.apiVersion || '2024-07'}`;
+        console.warn(`↪️  Fallback to CHAPI: ${fallbackBase}/products.json`);
+        client = createHaravanClient(fallbackBase);
+        const resp2 = await client.get('/products.json', { params });
+        console.log(`✅ Fallback fetched ${resp2.data.products?.length || 0} products via CHAPI`);
+        return resp2.data.products || [];
+      }
+      throw error;
+    }
   } catch (error) {
     console.error('❌ Error fetching products from Haravan:');
     console.error('   Status:', error?.response?.status);

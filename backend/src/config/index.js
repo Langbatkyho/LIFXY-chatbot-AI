@@ -24,6 +24,8 @@ const config = {
     // default to CHAPI (https://chapi.myharavan.com/{version}) or
     // shopUrl + /admin/api/{version} when shopUrl is provided.
     apiBase: process.env.HARAVAN_API_BASE || null,
+    // Enable automatic fallback to CHAPI when shop admin API returns 404/401
+    fallbackToChapi: process.env.HARAVAN_FALLBACK_TO_CHAPI !== 'false',
   },
 
   // Database
