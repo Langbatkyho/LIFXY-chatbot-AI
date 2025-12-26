@@ -5,7 +5,9 @@ const GEMINI_BASE = config.gemini.apiUrl; // e.g. https://generativelanguage.goo
 const MODEL = config.gemini.model;
 
 async function callGemini(prompt, options = {}) {
-  const url = `${GEMINI_BASE}/models/${MODEL}:generateContent?key=${config.gemini.apiKey}`;
+  // Format: https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=API_KEY
+  const modelName = MODEL.startsWith('models/') ? MODEL : `models/${MODEL}`;
+  const url = `${GEMINI_BASE}/${modelName}:generateContent?key=${config.gemini.apiKey}`;
 
   const body = {
     contents: [
