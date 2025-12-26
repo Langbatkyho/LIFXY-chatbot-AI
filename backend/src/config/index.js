@@ -18,7 +18,8 @@ const config = {
   // Haravan
   haravan: {
     accessToken: process.env.HARAVAN_ACCESS_TOKEN,
-    shopUrl: process.env.HARAVAN_SHOP_URL || 'https://chapi.myharavan.com/2024-07',
+    shopUrl: process.env.HARAVAN_SHOP_URL, // e.g., https://carmate.myharavan.com
+    apiVersion: '2024-07',
   },
 
   // Database

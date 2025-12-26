@@ -1,10 +1,24 @@
 import axios from 'axios';
 import config from '../config/index.js';
 
+// Build Haravan API base URL: {shopUrl}/admin/api/{version}
+const getHaravanBaseUrl = () => {
+  const shopUrl = config.haravan.shopUrl;
+  const apiVersion = config.haravan.apiVersion || '2024-07';
+  
+  if (!shopUrl) {
+    throw new Error('HARAVAN_SHOP_URL is not configured');
+  }
+  
+  // Remove trailing slash if present
+  const cleanUrl = shopUrl.replace(/\/$/, '');
+  return `${cleanUrl}/admin/api/${apiVersion}`;
+};
+
 const haravanClient = axios.create({
-  baseURL: config.haravan.shopUrl,
+  baseURL: getHaravanBaseUrl(),
   headers: {
-    'Authorization': `Bearer ${config.haravan.accessToken}`,
+    'X-Access-Token': config.haravan.accessToken,
     'Content-Type': 'application/json',
   },
 });
@@ -15,11 +29,11 @@ const haravanClient = axios.create({
 export const fetchAllProducts = async (limit = 250) => {
   try {
     // Debug logging
-    const url = config.haravan.shopUrl || 'NOT_SET';
+    const baseUrl = getHaravanBaseUrl();
     const token = config.haravan.accessToken ? '✓ SET' : '❌ NOT_SET';
-    console.log(`🔗 Haravan Shop URL: ${url}`);
-    console.log(`🔑 Haravan Access Token: ${token}`);
-    console.log(`📡 Calling: ${url}/products.json`);
+    console.log(`🔗 Haravan Shop URL: ${config.haravan.shopUrl}`);
+    console.log(`📡 API Base URL: ${baseUrl}`);
+    console.log(`🔑 Access Token: ${token}`);
 
     const response = await haravanClient.get('/products.json', {
       params: {
@@ -28,13 +42,16 @@ export const fetchAllProducts = async (limit = 250) => {
       },
     });
 
+    console.log(`✅ Successfully fetched ${response.data.products?.length || 0} products from Haravan`);
     return response.data.products || [];
   } catch (error) {
     console.error('❌ Error fetching products from Haravan:');
     console.error('   Status:', error?.response?.status);
     console.error('   Message:', error.message);
     console.error('   URL:', error?.config?.url);
-    console.error('   Full error:', error?.response?.data);
+    if (error?.response?.data) {
+      console.error('   Response:', JSON.stringify(error.response.data, null, 2));
+    }
     throw error;
   }
 };
