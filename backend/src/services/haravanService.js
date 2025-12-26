@@ -26,9 +26,11 @@ const getHaravanBaseUrl = () => {
 const haravanClient = axios.create({
   baseURL: getHaravanBaseUrl(),
   headers: {
-    // Haravan REST typically expects X-Access-Token
+    // Haravan admin API typically accepts either header form
     'X-Access-Token': config.haravan.accessToken,
+    'Authorization': `Bearer ${config.haravan.accessToken}`,
     'Content-Type': 'application/json',
+    'Accept': 'application/json',
   },
 });
 
@@ -44,12 +46,16 @@ export const fetchAllProducts = async (limit = 250) => {
     console.log(`📡 API Base URL: ${baseUrl}`);
     console.log(`🔑 Access Token: ${token}`);
 
-    const response = await haravanClient.get('/products.json', {
-      params: {
-        limit: limit,
-        fields: 'id,title,body_html,vendor,product_type,handle,status,published_at,created_at,images,variants',
-      },
-    });
+    const params = {
+      limit: limit,
+      fields: 'id,title,body_html,vendor,product_type,handle,status,published_at,created_at,images,variants',
+    };
+
+    // Log full URL including base and query params
+    const fullUrl = `${baseUrl}/products.json`;
+    console.log(`➡️  Request: GET ${fullUrl} params=${JSON.stringify(params)}`);
+
+    const response = await haravanClient.get('/products.json', { params });
 
     console.log(`✅ Successfully fetched ${response.data.products?.length || 0} products from Haravan`);
     return response.data.products || [];
