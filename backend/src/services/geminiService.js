@@ -42,7 +42,9 @@ async function callGemini(prompt, options = {}) {
 
     return JSON.stringify(resp.data);
   } catch (err) {
-    console.error('Gemini REST error:', err?.response?.status, err?.response?.data || err.message);
+    console.error('Gemini REST error - Status:', err?.response?.status);
+    console.error('Gemini REST error - Message:', err?.response?.data?.error?.message || err?.message);
+    console.error('Full error data:', err?.response?.data);
     throw err;
   }
 }
