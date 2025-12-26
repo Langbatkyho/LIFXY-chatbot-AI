@@ -142,4 +142,10 @@ export const searchProducts = async (keyword, products) => {
   ).slice(0, 5);
 };
 
-export default haravanClient;
+export default {
+  fetchAllProducts,
+  getProduct,
+  formatProductForAI,
+  searchProducts,
+};
+
