@@ -51,120 +51,183 @@ export const fetchAllProducts = async (limit = 250) => {
     console.log(`🔑 Access Token: ${token}`);
 
     const fields = 'id,title,body_html,vendor,product_type,handle,status,published_at,created_at,images,variants';
-    const pageSize = Math.min(limit || 250, 250); // Haravan often caps at 250
+    const pageSize = Math.min(limit || 250, 250);
 
     let allProducts = [];
-    let currentPage = 1;
-    let hasMore = true;
+    let nextUrl = null;
+    let pageNum = 1;
 
     const client = createHaravanClient(baseUrl);
 
-    while (hasMore) {
+    // First request
+    console.log(`📄 Fetching page 1 with limit=${pageSize}`);
+    
       try {
-        console.log(`📄 Fetching page ${currentPage} (${pageSize} products per page)`);
-        
-        // Haravan uses 'limit' and 'page' for pagination (page is 1-indexed)
-        const params = {
-          limit: pageSize,
-          page: currentPage,
-          fields: fields,
-          status: 'active', // Only fetch active products
-        };
+        const response = await client.get('/products.json', {
+          params: {
+            limit: pageSize,
+            fields: fields,
+            status: 'active',
+          }
+        });
 
-        const response = await client.get('/products.json', { params });
         const products = response.data?.products || [];
-        const pagination = response.data?.pagination || {};
+        console.log(`📦 Page 1: Got ${products.length} products`);
 
-        console.log(`📄 Page ${currentPage}: API returned ${products.length} products`);
-        console.log(`   Pagination info:`, JSON.stringify(pagination));
-        console.log(`   Response headers:`, JSON.stringify({
-          link: response.headers.link,
+        // Log ALL response headers to understand pagination
+        console.log(`📍 Response headers:`, {
+          'link': response.headers.link,
           'x-page-info': response.headers['x-page-info'],
           'x-total': response.headers['x-total'],
           'x-total-pages': response.headers['x-total-pages'],
+          'x-per-page': response.headers['x-per-page'],
+          'content-length': response.headers['content-length'],
         }));
 
         if (!products || products.length === 0) {
-          console.log(`✅ No products found on page ${currentPage}`);
-          hasMore = false;
+          console.log(`✅ No products found on page 1`);
           break;
         }
 
         allProducts = allProducts.concat(products);
-        console.log(`📦 Running total: ${allProducts.length} products`);
+        pageNum++;
 
-        // Check if there are more pages
-        // Haravan may provide pagination info in response body or headers
-        const hasNextPage = (pagination.has_next_page !== false) && 
-                           (response.headers['x-total-pages'] ? 
-                            currentPage < parseInt(response.headers['x-total-pages']) : 
-                            products.length >= pageSize);
-
-        if (hasNextPage) {
-          currentPage++;
+        // Check for Link header (most reliable pagination method)
+        const linkHeader = response.headers.link || response.headers.Link;
+        if (linkHeader && /rel="next"/i.test(linkHeader)) {
+          const match = linkHeader.match(/<([^>]+)>;\s*rel="next"/i);
+          nextUrl = match ? match[1] : null;
+          console.log(`🔗 Found Link header with next URL: ${nextUrl ? 'yes' : 'no'}`);
         } else {
-          console.log(`✅ Reached last page`);
-          hasMore = false;
+          console.log(`📊 No Link header found. Headers available:`, Object.keys(response.headers));
         }
-      } catch (error) {
-        const status = error?.response?.status;
-        console.error(`❌ Error at page ${currentPage}:`, error.message);
-        console.error(`   Status: ${status}`);
-        console.error(`   URL: ${error?.config?.url}`);
-        
-        // If 404/401 on first request, try CHAPI fallback
-        if (currentPage === 1 && config.haravan.fallbackToChapi && (status === 404 || status === 401)) {
-          const fallbackBase = `https://chapi.myharavan.com/${config.haravan.apiVersion || '2024-07'}`;
-          console.warn(`↪️ Fallback to CHAPI: ${fallbackBase}`);
-          
-          const fallbackClient = createHaravanClient(fallbackBase);
-          let fallbackPage = 1;
-          let fallbackHasMore = true;
-          
-          while (fallbackHasMore) {
+
+        // If Link header exists and works, use it for subsequent pages
+        while (nextUrl) {
+          try {
+            console.log(`📄 Fetching next page (via Link header)...`);
+            const resp = await client.get(nextUrl); // URL is absolute, so we pass it directly
+            const products = resp.data?.products || [];
+
+            console.log(`📦 Got ${products.length} products (running total: ${allProducts.length + products.length})`);
+
+            if (products && products.length > 0) {
+              allProducts = allProducts.concat(products);
+            }
+
+            // Check for next link
+            const nextLinkHeader = resp.headers.link || resp.headers.Link;
+            if (nextLinkHeader && /rel="next"/i.test(nextLinkHeader)) {
+              const match = nextLinkHeader.match(/<([^>]+)>;\s*rel="next"/i);
+              nextUrl = match ? match[1] : null;
+            } else {
+              nextUrl = null;
+            }
+
+            pageNum++;
+            if (pageNum > 100) {
+              console.warn('⚠️ Too many pages (>100), stopping pagination');
+              break;
+            }
+          } catch (error) {
+            console.error(`❌ Error fetching next page: ${error.message}`);
+            nextUrl = null;
+          }
+        }
+
+        // If Link header pagination didn't work, try traditional page-based pagination
+        if (allProducts.length === pageSize) {
+          console.log(`\n⚠️ Only got ${allProducts.length} products. Trying page-based pagination...`);
+          let morePagesExist = true;
+          let pageNum = 2;
+
+          while (morePagesExist && pageNum <= 100) {
             try {
-              console.log(`📄 CHAPI: Fetching page ${fallbackPage}`);
-              const params = {
-                limit: pageSize,
-                page: fallbackPage,
-                fields: fields,
-                status: 'active',
-              };
-              const resp = await fallbackClient.get('/products.json', { params });
+              console.log(`📄 Fetching page ${pageNum} with limit=${pageSize}`);
+              const resp = await client.get('/products.json', {
+                params: {
+                  limit: pageSize,
+                  page: pageNum,
+                  fields: fields,
+                  status: 'active',
+                }
+              });
+
               const products = resp.data?.products || [];
-              const pagination = resp.data?.pagination || {};
-              
-              console.log(`📦 CHAPI Page ${fallbackPage}: Got ${products.length} products (running total: ${allProducts.length + products.length})`);
-              
+              console.log(`📦 Page ${pageNum}: Got ${products.length} products (running total: ${allProducts.length + products.length})`);
+
               if (!products || products.length === 0) {
-                fallbackHasMore = false;
+                morePagesExist = false;
                 break;
               }
-              
-              allProducts = allProducts.concat(products);
-              
-              const hasNextPage = (pagination.has_next_page !== false) && 
-                                 (resp.headers['x-total-pages'] ? 
-                                  fallbackPage < parseInt(resp.headers['x-total-pages']) : 
-                                  products.length >= pageSize);
 
-              if (hasNextPage) {
-                fallbackPage++;
-              } else {
-                fallbackHasMore = false;
-              }
-            } catch (e) {
-              console.error(`❌ CHAPI fetch failed at page ${fallbackPage}:`, e.message);
-              fallbackHasMore = false;
+              allProducts = allProducts.concat(products);
+              pageNum++;
+            } catch (error) {
+              console.error(`❌ Error on page ${pageNum}: ${error.message}`);
+              morePagesExist = false;
             }
           }
-          
-          hasMore = false; // exit main loop
+        }
+
+      } catch (error) {
+        const status = error?.response?.status;
+        console.error(`❌ Error fetching first page:`, error.message);
+        
+        // If 404/401 on first request, try CHAPI fallback
+        if (config.haravan.fallbackToChapi && (status === 404 || status === 401)) {
+          const fallbackBase = `https://chapi.myharavan.com/${config.haravan.apiVersion || '2024-07'}`;
+          console.warn(`↪️ Fallback to CHAPI: ${fallbackBase}`);
+
+          const fallbackClient = createHaravanClient(fallbackBase);
+          try {
+            const resp = await fallbackClient.get('/products.json', {
+              params: {
+                limit: pageSize,
+                fields: fields,
+                status: 'active',
+              }
+            });
+
+            const products = resp.data?.products || [];
+            console.log(`📦 CHAPI: Got ${products.length} products on page 1`);
+            allProducts = allProducts.concat(products);
+
+            // Try Link header on CHAPI
+            const linkHeader = resp.headers.link || resp.headers.Link;
+            let nextUrl = null;
+            if (linkHeader && /rel="next"/i.test(linkHeader)) {
+              const match = linkHeader.match(/<([^>]+)>;\s*rel="next"/i);
+              nextUrl = match ? match[1] : null;
+            }
+
+            // Fetch remaining pages via Link header
+            while (nextUrl && allProducts.length < 200) { // reasonable limit
+              try {
+                const resp2 = await fallbackClient.get(nextUrl);
+                const products = resp2.data?.products || [];
+                allProducts = allProducts.concat(products);
+
+                const nextLinkHeader = resp2.headers.link || resp2.headers.Link;
+                if (nextLinkHeader && /rel="next"/i.test(nextLinkHeader)) {
+                  const match = nextLinkHeader.match(/<([^>]+)>;\s*rel="next"/i);
+                  nextUrl = match ? match[1] : null;
+                } else {
+                  nextUrl = null;
+                }
+              } catch (e) {
+                console.error(`❌ CHAPI next page error: ${e.message}`);
+                nextUrl = null;
+              }
+            }
+          } catch (e) {
+            console.error(`❌ CHAPI fallback also failed: ${e.message}`);
+            throw e;
+          }
         } else {
           throw error;
         }
       }
-    }
 
     console.log(`✅ Successfully fetched ${allProducts.length} total products from Haravan`);
     return allProducts;
