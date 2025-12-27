@@ -76,17 +76,17 @@ export const fetchAllProducts = async (limit = 250) => {
 
         // Log ALL response headers to understand pagination
         console.log(`📍 Response headers:`, {
-          'link': response.headers.link,
+          link: response.headers.link,
           'x-page-info': response.headers['x-page-info'],
           'x-total': response.headers['x-total'],
           'x-total-pages': response.headers['x-total-pages'],
           'x-per-page': response.headers['x-per-page'],
           'content-length': response.headers['content-length'],
-        }));
+        });
 
         if (!products || products.length === 0) {
           console.log(`✅ No products found on page 1`);
-          break;
+          return allProducts;
         }
 
         allProducts = allProducts.concat(products);
