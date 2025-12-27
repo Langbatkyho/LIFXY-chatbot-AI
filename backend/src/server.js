@@ -34,45 +34,33 @@ try {
 // Auto-sync products from Haravan on startup
 const autoSyncProducts = async () => {
   // Only sync if Haravan credentials are configured
-  if (!config.haravan.accessToken || !config.haravan.shopUrl) {
-    console.log('⏭️  Haravan not configured, skipping auto-sync');
+  if (!config.haravan.accessToken) {
+    console.log('⏭️  Haravan access token not configured, skipping auto-sync');
     return;
   }
 
   try {
-    // Check if products already exist (to optimize free tier)
-    const existingProducts = await getAllProducts();
+    console.log('🔄 Starting auto-sync of products on server startup...');
     
-    if (existingProducts.length > 0) {
-      console.log(`✅ Products already in database (${existingProducts.length} products), skipping sync`);
-      return;
-    }
-
-    console.log('📦 Starting auto-sync of products from Haravan...');
-    const startTime = Date.now();
-
-    // Fetch from Haravan with timeout to prevent hanging on free tier
-    const products = await Promise.race([
-      fetchAllProducts(250),
-      new Promise((_, reject) => 
-        setTimeout(() => reject(new Error('Haravan sync timeout (30s)')), 30000)
-      )
-    ]);
+    // Fetch all products from Haravan
+    const products = await fetchAllProducts();
+    console.log(`✅ Fetched ${products.length} products from Haravan`);
 
     if (products.length === 0) {
-      console.warn('⚠️  No products found from Haravan');
+      console.log('⚠️  No products fetched from Haravan');
       return;
     }
 
-    // Save to database
+    // Save to database (will truncate and recreate)
     await saveProducts(products);
-    productCache.clear();
+    console.log(`✅ Saved ${products.length} products to database`);
 
-    const duration = ((Date.now() - startTime) / 1000).toFixed(2);
-    console.log(`✅ Auto-synced ${products.length} products from Haravan (${duration}s)`);
+    // Clear cache
+    productCache.clear();
+    console.log('🗑️ Cache cleared');
   } catch (error) {
-    console.error('⚠️  Product auto-sync failed:', error.message);
-    console.log('💡 Products can still be synced manually via /api/admin/sync-products');
+    console.error('❌ Auto-sync failed:', error.message);
+    // Don't exit - allow server to run even if sync fails
   }
 };
 
