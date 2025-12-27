@@ -41,7 +41,7 @@ const createHaravanClient = (base) => axios.create({
 /**
  * Fetch all products from Haravan with pagination and status filtering
  */
-export const fetchAllProducts = async (limit = 250) => {
+export const fetchAllProducts = async (limit = 50) => {
   try {
     const baseUrl = getHaravanBaseUrl();
     const token = config.haravan.accessToken ? '✓ SET' : '❌ NOT_SET';
@@ -50,94 +50,102 @@ export const fetchAllProducts = async (limit = 250) => {
     console.log(`🧭 API Mode: ${config.haravan.apiMode || (config.haravan.shopUrl ? 'admin' : 'commerce')}`);
     console.log(`🔑 Access Token: ${token}`);
 
-    let allProducts = [];
-    let page = 1;
-    let hasMore = true;
+    const fields = 'id,title,body_html,vendor,product_type,handle,status,published_at,created_at,images,variants';
     
+    // Haravan API supports offset pagination with limit
+    // Try to fetch all products using offset pagination
+    let allProducts = [];
+    let offset = 0;
+    const pageSize = limit || 50;
+    let hasMore = true;
+
+    const client = createHaravanClient(baseUrl);
+
     while (hasMore) {
-      const params = {
-        limit: limit,
-        page: page,
-        fields: 'id,title,body_html,vendor,product_type,handle,status,published_at,created_at,images,variants',
-        // Filter for published/visible products only
-        status: 'active', // or 'active' for published products
-      };
-
-      const fullUrl = `${baseUrl}/products.json`;
-      console.log(`📄 Request: GET ${fullUrl} page=${page} limit=${limit}`);
-
-      let client = createHaravanClient(baseUrl);
       try {
-        const response = await client.get('/products.json', { params });
-        const pageProducts = response.data.products || [];
+        console.log(`📄 Fetching products: offset=${offset}, limit=${pageSize}`);
         
-        if (pageProducts.length === 0) {
-          console.log(`✅ No more products found at page ${page}`);
+        const params = {
+          limit: pageSize,
+          offset: offset,
+          fields: fields,
+        };
+
+        const response = await client.get('/products.json', { params });
+        const products = response.data?.products || [];
+
+        if (!products || products.length === 0) {
+          console.log(`✅ No more products found at offset ${offset}`);
+          hasMore = false;
+          break;
+        }
+
+        // Filter for published/active products only
+        const activeProducts = products.filter(p => {
+          return p.status === 'active' || p.published_at;
+        });
+
+        console.log(`📦 Offset ${offset}: Found ${products.length} total, ${activeProducts.length} active products (running total: ${allProducts.length + activeProducts.length})`);
+        allProducts = allProducts.concat(activeProducts);
+
+        // If we got fewer products than requested, we've reached the end
+        if (products.length < pageSize) {
+          console.log(`✅ Reached end of products (got ${products.length} < requested ${pageSize})`);
           hasMore = false;
         } else {
-          console.log(`📦 Page ${page}: Fetched ${pageProducts.length} products (total: ${allProducts.length + pageProducts.length})`);
-          allProducts = allProducts.concat(pageProducts);
-          
-          // Check if we got fewer products than limit (last page)
-          if (pageProducts.length < limit) {
-            hasMore = false;
-            console.log(`✅ Reached last page (${pageProducts.length} < ${limit})`);
-          } else {
-            page++;
-          }
+          offset += pageSize;
         }
       } catch (error) {
         const status = error?.response?.status;
-        const shouldFallback = config.haravan.fallbackToChapi && (status === 404 || status === 401);
+        console.error(`❌ Error at offset ${offset}:`, error.message);
         
-        if (shouldFallback && page === 1) {
-          // Only fallback on first request to avoid fallback loop
+        // If 404/401 on first request, try CHAPI fallback
+        if (offset === 0 && config.haravan.fallbackToChapi && (status === 404 || status === 401)) {
           const fallbackBase = `https://chapi.myharavan.com/${config.haravan.apiVersion || '2024-07'}`;
-          console.warn(`↪️  Fallback to CHAPI: ${fallbackBase}/products.json`);
+          console.warn(`↪️ Fallback to CHAPI: ${fallbackBase}`);
           
-          // Restart with CHAPI
-          const fallbackParams = {
-            limit: limit,
-            page: page,
-            fields: 'id,title,body_html,vendor,product_type,handle,status,published_at,created_at,images,variants',
-          };
-          
-          client = createHaravanClient(fallbackBase);
-          let fallbackPage = 1;
+          const fallbackClient = createHaravanClient(fallbackBase);
+          let fallbackOffset = 0;
           let fallbackHasMore = true;
           
           while (fallbackHasMore) {
-            fallbackParams.page = fallbackPage;
             try {
-              const resp = await client.get('/products.json', { params: fallbackParams });
-              const pageProducts = resp.data.products || [];
+              const params = {
+                limit: pageSize,
+                offset: fallbackOffset,
+                fields: fields,
+              };
+              const resp = await fallbackClient.get('/products.json', { params });
+              const products = resp.data?.products || [];
               
-              if (pageProducts.length === 0) {
+              if (!products || products.length === 0) {
+                fallbackHasMore = false;
+                break;
+              }
+              
+              const activeProducts = products.filter(p => p.status === 'active' || p.published_at);
+              console.log(`📦 CHAPI Offset ${fallbackOffset}: Found ${products.length} total, ${activeProducts.length} active (running total: ${allProducts.length + activeProducts.length})`);
+              allProducts = allProducts.concat(activeProducts);
+              
+              if (products.length < pageSize) {
                 fallbackHasMore = false;
               } else {
-                console.log(`📦 CHAPI Page ${fallbackPage}: Fetched ${pageProducts.length} products (total: ${allProducts.length + pageProducts.length})`);
-                allProducts = allProducts.concat(pageProducts);
-                
-                if (pageProducts.length < limit) {
-                  fallbackHasMore = false;
-                } else {
-                  fallbackPage++;
-                }
+                fallbackOffset += pageSize;
               }
             } catch (e) {
-              console.error(`❌ CHAPI page ${fallbackPage} failed:`, e.message);
+              console.error(`❌ CHAPI fetch failed at offset ${fallbackOffset}:`, e.message);
               fallbackHasMore = false;
             }
           }
           
-          hasMore = false; // Exit main loop
+          hasMore = false; // exit main loop
         } else {
           throw error;
         }
       }
     }
 
-    console.log(`✅ Successfully fetched ${allProducts.length} total products from Haravan`);
+    console.log(`✅ Successfully fetched ${allProducts.length} total active products from Haravan`);
     return allProducts;
   } catch (error) {
     console.error('❌ Error fetching products from Haravan:');
