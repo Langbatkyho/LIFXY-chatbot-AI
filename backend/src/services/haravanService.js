@@ -189,6 +189,43 @@ export const fetchAllProducts = async (limit = 250) => {
               morePagesExist = false;
             }
           }
+
+          // If page-based didn't yield more, try offset-based pagination
+          if (allProducts.length === pageSize) {
+            console.log(`\n⚠️ Page-based yielded only ${allProducts.length}. Trying offset-based pagination...`);
+            let offset = pageSize;
+            let keepGoing = true;
+            while (keepGoing && offset <= 10000) {
+              try {
+                console.log(`📄 Fetching offset ${offset} limit=${pageSize}`);
+                const resp = await client.get('/products.json', {
+                  params: {
+                    limit: pageSize,
+                    offset: offset,
+                    fields: fields,
+                    status: 'active',
+                  }
+                });
+                const products = resp.data?.products || [];
+                console.log(`📦 Offset ${offset}: Got ${products.length} products (running total: ${allProducts.length + products.length})`);
+
+                if (!products || products.length === 0) {
+                  keepGoing = false;
+                  break;
+                }
+
+                allProducts = allProducts.concat(products);
+                if (products.length < pageSize) {
+                  keepGoing = false;
+                } else {
+                  offset += pageSize;
+                }
+              } catch (error) {
+                console.error(`❌ Error on offset ${offset}: ${error.message}`);
+                keepGoing = false;
+              }
+            }
+          }
         }
 
       } catch (error) {
