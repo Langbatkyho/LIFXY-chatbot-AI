@@ -92,14 +92,25 @@ export const fetchAllProducts = async (limit = 250) => {
         allProducts = allProducts.concat(products);
         pageNum++;
 
-        // Check for Link header (most reliable pagination method)
+        // Prefer Link header (cursor-based). If absent, try X-Page-Info.
         const linkHeader = response.headers.link || response.headers.Link;
         if (linkHeader && /rel="next"/i.test(linkHeader)) {
           const match = linkHeader.match(/<([^>]+)>;\s*rel="next"/i);
           nextUrl = match ? match[1] : null;
           console.log(`🔗 Found Link header with next URL: ${nextUrl ? 'yes' : 'no'}`);
         } else {
-          console.log(`📊 No Link header found. Headers available:`, Object.keys(response.headers));
+          const pageInfo = response.headers['x-page-info'] || response.headers['x-next-page-info'];
+          if (pageInfo) {
+            const url = new URL(`${baseUrl}/products.json`);
+            url.searchParams.set('limit', String(pageSize));
+            url.searchParams.set('fields', fields);
+            url.searchParams.set('status', 'active');
+            url.searchParams.set('page_info', pageInfo);
+            nextUrl = url.toString();
+            console.log('🔗 Using X-Page-Info for next page');
+          } else {
+            console.log(`📊 No Link/X-Page-Info header found. Headers available:`, Object.keys(response.headers));
+          }
         }
 
         // If Link header exists and works, use it for subsequent pages
@@ -115,13 +126,23 @@ export const fetchAllProducts = async (limit = 250) => {
               allProducts = allProducts.concat(products);
             }
 
-            // Check for next link
+            // Check for next link or X-Page-Info
             const nextLinkHeader = resp.headers.link || resp.headers.Link;
             if (nextLinkHeader && /rel="next"/i.test(nextLinkHeader)) {
               const match = nextLinkHeader.match(/<([^>]+)>;\s*rel="next"/i);
               nextUrl = match ? match[1] : null;
             } else {
-              nextUrl = null;
+              const pageInfo = resp.headers['x-page-info'] || resp.headers['x-next-page-info'];
+              if (pageInfo) {
+                const url = new URL(`${baseUrl}/products.json`);
+                url.searchParams.set('limit', String(pageSize));
+                url.searchParams.set('fields', fields);
+                url.searchParams.set('status', 'active');
+                url.searchParams.set('page_info', pageInfo);
+                nextUrl = url.toString();
+              } else {
+                nextUrl = null;
+              }
             }
 
             pageNum++;
