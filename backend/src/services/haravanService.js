@@ -226,6 +226,36 @@ export const fetchAllProducts = async (limit = 250) => {
               }
             }
           }
+
+          // If offset-based still yields only the first batch, try since_id pagination (Shopify-style)
+          if (allProducts.length === pageSize && allProducts[allProducts.length - 1]?.id) {
+            console.log(`\n⚠️ Offset-based yielded only ${allProducts.length}. Trying since_id pagination...`);
+            let lastId = allProducts[allProducts.length - 1].id;
+            let pages = 0;
+            while (pages < 100) {
+              try {
+                console.log(`📄 Fetching since_id ${lastId} limit=${pageSize}`);
+                const resp = await client.get('/products.json', {
+                  params: {
+                    limit: pageSize,
+                    since_id: lastId,
+                    fields: fields,
+                    status: 'active',
+                  }
+                });
+                const products = resp.data?.products || [];
+                console.log(`📦 since_id ${lastId}: Got ${products.length} products (running total: ${allProducts.length + products.length})`);
+                if (!products || products.length === 0) break;
+                allProducts = allProducts.concat(products);
+                lastId = products[products.length - 1].id;
+                if (products.length < pageSize) break;
+                pages++;
+              } catch (error) {
+                console.error(`❌ Error on since_id ${lastId}: ${error.message}`);
+                break;
+              }
+            }
+          }
         }
 
       } catch (error) {
