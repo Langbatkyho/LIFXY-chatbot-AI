@@ -336,7 +336,9 @@ export const fetchAllProducts = async (limit = 250) => {
  */
 export const getProduct = async (productId) => {
   try {
-    const response = await haravanClient.get(`/products/${productId}.json`);
+    const baseUrl = getHaravanBaseUrl();
+    const client = createHaravanClient(baseUrl);
+    const response = await client.get(`/products/${productId}.json`);
     return response.data.product;
   } catch (error) {
     console.error(`Error fetching product ${productId}:`, error.message);

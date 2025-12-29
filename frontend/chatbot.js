@@ -29,10 +29,21 @@
   container.id = 'carmate-chatbot-root';
   document.body.appendChild(container);
 
-  // Load CSS (use local/relative CSS so widget works when hosted as a static site)
+  // Load CSS - try to detect script path for proper CSS loading
+  const getCurrentScriptPath = () => {
+    const scripts = document.getElementsByTagName('script');
+    const currentScript = scripts[scripts.length - 1];
+    if (currentScript && currentScript.src) {
+      const scriptUrl = new URL(currentScript.src);
+      return scriptUrl.origin + scriptUrl.pathname.substring(0, scriptUrl.pathname.lastIndexOf('/')) + '/';
+    }
+    return '';
+  };
+  
   const style = document.createElement('link');
   style.rel = 'stylesheet';
-  style.href = 'ChatWidget.css';
+  const basePath = getCurrentScriptPath();
+  style.href = basePath ? basePath + 'ChatWidget.css' : 'ChatWidget.css';
   document.head.appendChild(style);
 
   // Load and render React component (if using React)

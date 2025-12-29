@@ -19,8 +19,8 @@ export const saveChatMessage = async (sessionId, userMessage, botResponse, refer
     ]);
     return result.rows[0];
   } catch (error) {
-    console.error('Error saving chat message:', error);
-    throw error;
+    console.error('Error saving chat message:', error.message);
+    throw new Error(`Failed to save chat message: ${error.message}`);
   }
 };
 
@@ -39,8 +39,8 @@ export const getChatHistory = async (sessionId, limit = 20) => {
     const result = await pool.query(query, [sessionId, limit]);
     return result.rows.reverse();
   } catch (error) {
-    console.error('Error getting chat history:', error);
-    throw error;
+    console.error('Error getting chat history:', error.message);
+    throw new Error(`Failed to get chat history: ${error.message}`);
   }
 };
 
@@ -59,8 +59,8 @@ export const createChatSession = async (sessionId, customerEmail = null, custome
     const result = await pool.query(query, [sessionId, customerEmail, customerName, ipAddress]);
     return result.rows[0];
   } catch (error) {
-    console.error('Error creating/updating chat session:', error);
-    throw error;
+    console.error('Error creating/updating chat session:', error.message);
+    throw new Error(`Failed to create/update chat session: ${error.message}`);
   }
 };
 
@@ -103,8 +103,8 @@ export const saveProducts = async (products) => {
     console.log(`✅ Saved ${products.length} products to database`);
   } catch (error) {
     await client.query('ROLLBACK');
-    console.error('Error saving products:', error);
-    throw error;
+    console.error('Error saving products:', error.message);
+    throw new Error(`Failed to save products: ${error.message}`);
   } finally {
     client.release();
   }
@@ -120,8 +120,8 @@ export const getAllProducts = async () => {
     const result = await pool.query(query);
     return result.rows;
   } catch (error) {
-    console.error('Error getting products:', error);
-    throw error;
+    console.error('Error getting products:', error.message);
+    throw new Error(`Failed to get products: ${error.message}`);
   }
 };
 
@@ -139,8 +139,8 @@ export const searchProductsInDb = async (keyword) => {
     const result = await pool.query(query, [`%${keyword}%`]);
     return result.rows;
   } catch (error) {
-    console.error('Error searching products:', error);
-    throw error;
+    console.error('Error searching products:', error.message);
+    throw new Error(`Failed to search products: ${error.message}`);
   }
 };
 
