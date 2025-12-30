@@ -31,7 +31,9 @@ try {
   process.exit(1);
 }
 
-// Auto-sync products from Haravan on startup
+// Auto-sync products from Haravan on startup (DISABLED by default to prevent deployment timeouts)
+// To enable, set AUTO_SYNC_PRODUCTS=true in environment variables
+// Use POST /api/admin/sync-products to manually trigger sync
 const autoSyncProducts = async () => {
   // Only sync if Haravan credentials are configured
   if (!config.haravan.accessToken) {
@@ -64,9 +66,13 @@ const autoSyncProducts = async () => {
   }
 };
 
-// Run auto-sync in background (non-blocking)
-if (process.env.AUTO_SYNC_PRODUCTS !== 'false') {
+// Auto-sync DISABLED by default - change to 'true' to enable
+// This prevents deployment timeouts when syncing large product catalogs
+if (process.env.AUTO_SYNC_PRODUCTS === 'true') {
+  console.log('⚙️  Auto-sync enabled via AUTO_SYNC_PRODUCTS=true');
   autoSyncProducts();
+} else {
+  console.log('⏭️  Auto-sync disabled. Use POST /api/admin/sync-products to manually sync.');
 }
 
 // Routes
