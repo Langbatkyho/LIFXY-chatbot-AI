@@ -34,11 +34,21 @@ router.post('/message', async (req, res) => {
     let referencedProducts = [];
 
     if (keywords.length > 0) {
-      // Try searching with first keyword, then second if no results
+      // Try searching with multiple strategies
       let searchResults = [];
-      for (const keyword of keywords.slice(0, 3)) {
-        searchResults = await searchProductsInDb(keyword);
-        if (searchResults.length > 0) break;
+      
+      // Strategy 1: Try full phrase (first 3 keywords combined)
+      if (keywords.length >= 2) {
+        const phrase = keywords.slice(0, 3).join(' ');
+        searchResults = await searchProductsInDb(phrase);
+      }
+      
+      // Strategy 2: If no results, try individual keywords
+      if (searchResults.length === 0) {
+        for (const keyword of keywords.slice(0, 5)) {
+          searchResults = await searchProductsInDb(keyword);
+          if (searchResults.length > 0) break;
+        }
       }
       
       if (searchResults.length > 0) {
