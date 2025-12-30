@@ -91,7 +91,8 @@ export const fetchAllProducts = async (limit = 250) => {
           limit: pageSize,
           page: pageNum,
           fields: fields,
-          status: 'active',
+          // Note: Commerce API returns max 50 per page regardless of limit
+          // Removed status filter to get all products including published ones
         };
 
         console.log(`📄 Fetching page ${pageNum}...`);
@@ -176,15 +177,12 @@ const fetchAllProductsFromChapi = async (pageSize, fields) => {
     try {
       const params = {
         limit: pageSize,
+        page: pageNum,
         fields: fields,
-        status: 'active',
+        // Removed status filter to get all products
       };
 
-      if (sinceId > 0) {
-        params.since_id = sinceId;
-      }
-
-      console.log(`📄 CHAPI page ${pageNum}${sinceId > 0 ? ` (since_id: ${sinceId})` : ''}...`);
+      console.log(`📄 CHAPI page ${pageNum}...`);
 
       const response = await client.get('/products.json', { params });
       const products = response.data?.products || [];
@@ -197,9 +195,6 @@ const fetchAllProductsFromChapi = async (pageSize, fields) => {
       }
 
       allProducts = allProducts.concat(products);
-
-      // Get last product ID for next iteration
-      sinceId = products[products.length - 1].id;
       pageNum++;
 
       await delay(250); // Rate limiting
