@@ -39,7 +39,8 @@ const createHaravanClient = (base) => axios.create({
 });
 
 /**
- * Fetch all products from Haravan with pagination and status filtering
+ * Fetch all products from Haravan with cursor-based pagination (since_id)
+ * Following Haravan best practices from official documentation
  */
 export const fetchAllProducts = async (limit = 250) => {
   try {
@@ -50,277 +51,115 @@ export const fetchAllProducts = async (limit = 250) => {
     console.log(`🧭 API Mode: ${config.haravan.apiMode || (config.haravan.shopUrl ? 'admin' : 'commerce')}`);
     console.log(`🔑 Access Token: ${token}`);
 
+    // Optimize fields to reduce payload size
     const fields = 'id,title,body_html,vendor,product_type,handle,status,published_at,created_at,images,variants';
     const pageSize = Math.min(limit || 250, 250);
 
     let allProducts = [];
-    let nextUrl = null;
+    let sinceId = 0; // Start from beginning
     let pageNum = 1;
+    let hasMore = true;
 
     const client = createHaravanClient(baseUrl);
 
-    // First request
-    console.log(`📄 Fetching page 1 with limit=${pageSize}`);
+    // Helper function to delay between requests for rate limiting
+    const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+    // Helper function to check rate limit and wait if needed
+    const checkRateLimit = (headers) => {
+      const callLimit = headers['x-haravan-api-call-limit'];
+      if (callLimit) {
+        const [current, max] = callLimit.split('/').map(Number);
+        const remaining = max - current;
+        console.log(`📊 Rate limit: ${current}/${max} (${remaining} remaining)`);
+        
+        // If less than 10 requests remaining, wait to avoid 429
+        if (remaining < 10) {
+          console.log('⚠️ Approaching rate limit, waiting 5 seconds...');
+          return delay(5000);
+        }
+      }
+      // Safe delay between requests (250ms = 4 req/s, matching leak rate)
+      return delay(250);
+    };
+
+    // Cursor-based pagination using since_id (recommended by Haravan)
+    console.log(`🚀 Starting cursor-based pagination with limit=${pageSize}`);
     
+    while (hasMore) {
       try {
-        const response = await client.get('/products.json', {
-          params: {
-            limit: pageSize,
-            fields: fields,
-            status: 'active',
-          }
-        });
+        const params = {
+          limit: pageSize,
+          fields: fields,
+          status: 'active',
+        };
+
+        // Add since_id for pagination (skip on first request)
+        if (sinceId > 0) {
+          params.since_id = sinceId;
+        }
+
+        console.log(`📄 Fetching page ${pageNum}${sinceId > 0 ? ` (since_id: ${sinceId})` : ''}...`);
+
+        const response = await client.get('/products.json', { params });
 
         const products = response.data?.products || [];
-        console.log(`📦 Page 1: Got ${products.length} products`);
+        console.log(`📦 Page ${pageNum}: Got ${products.length} products (total: ${allProducts.length + products.length})`);
 
-        // Log ALL response headers to understand pagination
-        console.log(`📍 Response headers:`, {
-          link: response.headers.link,
-          'x-page-info': response.headers['x-page-info'],
-          'x-total': response.headers['x-total'],
-          'x-total-pages': response.headers['x-total-pages'],
-          'x-per-page': response.headers['x-per-page'],
-          'content-length': response.headers['content-length'],
-        });
+        // Check rate limit before continuing
+        await checkRateLimit(response.headers);
 
         if (!products || products.length === 0) {
-          console.log(`✅ No products found on page 1`);
-          return allProducts;
+          console.log(`✅ No more products. Pagination complete.`);
+          hasMore = false;
+          break;
         }
 
         allProducts = allProducts.concat(products);
-        pageNum++;
 
-        // Prefer Link header (cursor-based). If absent, try X-Page-Info.
-        const linkHeader = response.headers.link || response.headers.Link;
-        if (linkHeader && /rel="next"/i.test(linkHeader)) {
-          const match = linkHeader.match(/<([^>]+)>;\s*rel="next"/i);
-          nextUrl = match ? match[1] : null;
-          console.log(`🔗 Found Link header with next URL: ${nextUrl ? 'yes' : 'no'}`);
+        // If we got less than pageSize, we've reached the end
+        if (products.length < pageSize) {
+          console.log(`✅ Got ${products.length} < ${pageSize}, reached end of catalog`);
+          hasMore = false;
         } else {
-          const pageInfo = response.headers['x-page-info'] || response.headers['x-next-page-info'];
-          if (pageInfo) {
-            const url = new URL(`${baseUrl}/products.json`);
-            url.searchParams.set('limit', String(pageSize));
-            url.searchParams.set('fields', fields);
-            url.searchParams.set('status', 'active');
-            url.searchParams.set('page_info', pageInfo);
-            nextUrl = url.toString();
-            console.log('🔗 Using X-Page-Info for next page');
-          } else {
-            console.log(`📊 No Link/X-Page-Info header found. Headers available:`, Object.keys(response.headers));
-          }
+          // Get last product ID for next iteration
+          const lastProduct = products[products.length - 1];
+          sinceId = lastProduct.id;
+          pageNum++;
         }
 
-        // If Link header exists and works, use it for subsequent pages
-        while (nextUrl) {
-          try {
-            console.log(`📄 Fetching next page (via Link header)...`);
-            const resp = await client.get(nextUrl); // URL is absolute, so we pass it directly
-            const products = resp.data?.products || [];
-
-            console.log(`📦 Got ${products.length} products (running total: ${allProducts.length + products.length})`);
-
-            if (products && products.length > 0) {
-              allProducts = allProducts.concat(products);
-            }
-
-            // Check for next link or X-Page-Info
-            const nextLinkHeader = resp.headers.link || resp.headers.Link;
-            if (nextLinkHeader && /rel="next"/i.test(nextLinkHeader)) {
-              const match = nextLinkHeader.match(/<([^>]+)>;\s*rel="next"/i);
-              nextUrl = match ? match[1] : null;
-            } else {
-              const pageInfo = resp.headers['x-page-info'] || resp.headers['x-next-page-info'];
-              if (pageInfo) {
-                const url = new URL(`${baseUrl}/products.json`);
-                url.searchParams.set('limit', String(pageSize));
-                url.searchParams.set('fields', fields);
-                url.searchParams.set('status', 'active');
-                url.searchParams.set('page_info', pageInfo);
-                nextUrl = url.toString();
-              } else {
-                nextUrl = null;
-              }
-            }
-
-            pageNum++;
-            if (pageNum > 100) {
-              console.warn('⚠️ Too many pages (>100), stopping pagination');
-              break;
-            }
-          } catch (error) {
-            console.error(`❌ Error fetching next page: ${error.message}`);
-            nextUrl = null;
-          }
-        }
-
-        // If Link header pagination didn't work, try traditional page-based pagination
-        if (allProducts.length === pageSize) {
-          console.log(`\n⚠️ Only got ${allProducts.length} products. Trying page-based pagination...`);
-          let morePagesExist = true;
-          let pageNum = 2;
-
-          while (morePagesExist && pageNum <= 100) {
-            try {
-              console.log(`📄 Fetching page ${pageNum} with limit=${pageSize}`);
-              const resp = await client.get('/products.json', {
-                params: {
-                  limit: pageSize,
-                  page: pageNum,
-                  fields: fields,
-                  status: 'active',
-                }
-              });
-
-              const products = resp.data?.products || [];
-              console.log(`📦 Page ${pageNum}: Got ${products.length} products (running total: ${allProducts.length + products.length})`);
-
-              if (!products || products.length === 0) {
-                morePagesExist = false;
-                break;
-              }
-
-              allProducts = allProducts.concat(products);
-              pageNum++;
-            } catch (error) {
-              console.error(`❌ Error on page ${pageNum}: ${error.message}`);
-              morePagesExist = false;
-            }
-          }
-
-          // If page-based didn't yield more, try offset-based pagination
-          if (allProducts.length === pageSize) {
-            console.log(`\n⚠️ Page-based yielded only ${allProducts.length}. Trying offset-based pagination...`);
-            let offset = pageSize;
-            let keepGoing = true;
-            while (keepGoing && offset <= 10000) {
-              try {
-                console.log(`📄 Fetching offset ${offset} limit=${pageSize}`);
-                const resp = await client.get('/products.json', {
-                  params: {
-                    limit: pageSize,
-                    offset: offset,
-                    fields: fields,
-                    status: 'active',
-                  }
-                });
-                const products = resp.data?.products || [];
-                console.log(`📦 Offset ${offset}: Got ${products.length} products (running total: ${allProducts.length + products.length})`);
-
-                if (!products || products.length === 0) {
-                  keepGoing = false;
-                  break;
-                }
-
-                allProducts = allProducts.concat(products);
-                if (products.length < pageSize) {
-                  keepGoing = false;
-                } else {
-                  offset += pageSize;
-                }
-              } catch (error) {
-                console.error(`❌ Error on offset ${offset}: ${error.message}`);
-                keepGoing = false;
-              }
-            }
-          }
-
-          // If offset-based still yields only the first batch, try since_id pagination (Shopify-style)
-          if (allProducts.length === pageSize && allProducts[allProducts.length - 1]?.id) {
-            console.log(`\n⚠️ Offset-based yielded only ${allProducts.length}. Trying since_id pagination...`);
-            let lastId = allProducts[allProducts.length - 1].id;
-            let pages = 0;
-            while (pages < 100) {
-              try {
-                console.log(`📄 Fetching since_id ${lastId} limit=${pageSize}`);
-                const resp = await client.get('/products.json', {
-                  params: {
-                    limit: pageSize,
-                    since_id: lastId,
-                    fields: fields,
-                    status: 'active',
-                  }
-                });
-                const products = resp.data?.products || [];
-                console.log(`📦 since_id ${lastId}: Got ${products.length} products (running total: ${allProducts.length + products.length})`);
-                if (!products || products.length === 0) break;
-                allProducts = allProducts.concat(products);
-                lastId = products[products.length - 1].id;
-                if (products.length < pageSize) break;
-                pages++;
-              } catch (error) {
-                console.error(`❌ Error on since_id ${lastId}: ${error.message}`);
-                break;
-              }
-            }
-          }
+        // Safety check to prevent infinite loops
+        if (pageNum > 1000) {
+          console.warn('⚠️ Reached maximum page limit (1000), stopping');
+          hasMore = false;
         }
 
       } catch (error) {
         const status = error?.response?.status;
-        console.error(`❌ Error fetching first page:`, error.message);
-        
-        // If 404/401 on first request, try CHAPI fallback
-        if (config.haravan.fallbackToChapi && (status === 404 || status === 401)) {
-          const fallbackBase = `https://chapi.myharavan.com/${config.haravan.apiVersion || '2024-07'}`;
-          console.warn(`↪️ Fallback to CHAPI: ${fallbackBase}`);
 
-          const fallbackClient = createHaravanClient(fallbackBase);
-          try {
-            const resp = await fallbackClient.get('/products.json', {
-              params: {
-                limit: pageSize,
-                fields: fields,
-                status: 'active',
-              }
-            });
-
-            const products = resp.data?.products || [];
-            console.log(`📦 CHAPI: Got ${products.length} products on page 1`);
-            allProducts = allProducts.concat(products);
-
-            // Try Link header on CHAPI
-            const linkHeader = resp.headers.link || resp.headers.Link;
-            let nextUrl = null;
-            if (linkHeader && /rel="next"/i.test(linkHeader)) {
-              const match = linkHeader.match(/<([^>]+)>;\s*rel="next"/i);
-              nextUrl = match ? match[1] : null;
-            }
-
-            // Fetch remaining pages via Link header
-            while (nextUrl && allProducts.length < 200) { // reasonable limit
-              try {
-                const resp2 = await fallbackClient.get(nextUrl);
-                const products = resp2.data?.products || [];
-                allProducts = allProducts.concat(products);
-
-                const nextLinkHeader = resp2.headers.link || resp2.headers.Link;
-                if (nextLinkHeader && /rel="next"/i.test(nextLinkHeader)) {
-                  const match = nextLinkHeader.match(/<([^>]+)>;\s*rel="next"/i);
-                  nextUrl = match ? match[1] : null;
-                } else {
-                  nextUrl = null;
-                }
-              } catch (e) {
-                console.error(`❌ CHAPI next page error: ${e.message}`);
-                nextUrl = null;
-              }
-            }
-          } catch (e) {
-            console.error(`❌ CHAPI fallback also failed: ${e.message}`);
-            throw e;
-          }
-        } else {
-          throw error;
+        // Handle 429 Too Many Requests
+        if (status === 429) {
+          const retryAfter = error.response?.headers['retry-after'] || 5;
+          console.warn(`⏳ Rate limit hit (429), waiting ${retryAfter} seconds...`);
+          await delay(retryAfter * 1000);
+          continue; // Retry same request
         }
+
+        // Handle 404/401 with CHAPI fallback
+        if (config.haravan.fallbackToChapi && (status === 404 || status === 401) && pageNum === 1) {
+          console.warn(`↪️ Primary API failed, trying CHAPI fallback...`);
+          return await fetchAllProductsFromChapi(pageSize, fields);
+        }
+
+        console.error(`❌ Error fetching products:`, error.message);
+        throw error;
       }
+    }
 
     console.log(`✅ Successfully fetched ${allProducts.length} total products from Haravan`);
     return allProducts;
   } catch (error) {
-    console.error('❌ Error fetching products from Haravan:');
+    console.error('❌ Error in fetchAllProducts:');
     console.error('   Status:', error?.response?.status);
     console.error('   Message:', error.message);
     console.error('   URL:', error?.config?.url);
@@ -329,6 +168,72 @@ export const fetchAllProducts = async (limit = 250) => {
     }
     throw error;
   }
+};
+
+/**
+ * Fallback method using CHAPI endpoint with cursor-based pagination
+ */
+const fetchAllProductsFromChapi = async (pageSize, fields) => {
+  const fallbackBase = `https://chapi.myharavan.com/${config.haravan.apiVersion || '2024-07'}`;
+  console.log(`📡 Using CHAPI: ${fallbackBase}`);
+
+  const client = createHaravanClient(fallbackBase);
+  let allProducts = [];
+  let sinceId = 0;
+  let pageNum = 1;
+  let hasMore = true;
+
+  const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+  while (hasMore && pageNum <= 100) {
+    try {
+      const params = {
+        limit: pageSize,
+        fields: fields,
+        status: 'active',
+      };
+
+      if (sinceId > 0) {
+        params.since_id = sinceId;
+      }
+
+      console.log(`📄 CHAPI page ${pageNum}${sinceId > 0 ? ` (since_id: ${sinceId})` : ''}...`);
+
+      const response = await client.get('/products.json', { params });
+      const products = response.data?.products || [];
+
+      console.log(`📦 CHAPI page ${pageNum}: Got ${products.length} products (total: ${allProducts.length + products.length})`);
+
+      if (!products || products.length === 0) {
+        hasMore = false;
+        break;
+      }
+
+      allProducts = allProducts.concat(products);
+
+      if (products.length < pageSize) {
+        hasMore = false;
+      } else {
+        sinceId = products[products.length - 1].id;
+        pageNum++;
+      }
+
+      await delay(250); // Rate limiting
+
+    } catch (error) {
+      if (error?.response?.status === 429) {
+        const retryAfter = error.response?.headers['retry-after'] || 5;
+        console.warn(`⏳ CHAPI rate limit, waiting ${retryAfter}s...`);
+        await delay(retryAfter * 1000);
+        continue;
+      }
+      console.error(`❌ CHAPI error: ${error.message}`);
+      throw error;
+    }
+  }
+
+  console.log(`✅ CHAPI fetched ${allProducts.length} products`);
+  return allProducts;
 };
 
 /**
