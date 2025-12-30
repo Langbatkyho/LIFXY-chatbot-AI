@@ -117,16 +117,10 @@ export const fetchAllProducts = async (limit = 250) => {
 
         allProducts = allProducts.concat(products);
 
-        // If we got less than pageSize, we've reached the end
-        if (products.length < pageSize) {
-          console.log(`✅ Got ${products.length} < ${pageSize}, reached end of catalog`);
-          hasMore = false;
-        } else {
-          // Get last product ID for next iteration
-          const lastProduct = products[products.length - 1];
-          sinceId = lastProduct.id;
-          pageNum++;
-        }
+        // Get last product ID for next iteration  
+        const lastProduct = products[products.length - 1];
+        sinceId = lastProduct.id;
+        pageNum++;
 
         // Safety check to prevent infinite loops
         if (pageNum > 1000) {
@@ -211,12 +205,9 @@ const fetchAllProductsFromChapi = async (pageSize, fields) => {
 
       allProducts = allProducts.concat(products);
 
-      if (products.length < pageSize) {
-        hasMore = false;
-      } else {
-        sinceId = products[products.length - 1].id;
-        pageNum++;
-      }
+      // Get last product ID for next iteration
+      sinceId = products[products.length - 1].id;
+      pageNum++;
 
       await delay(250); // Rate limiting
 
