@@ -91,8 +91,8 @@ export const fetchAllProducts = async (limit = 250) => {
           limit: pageSize,
           page: pageNum,
           fields: fields,
+          published_status: 'published', // Only get published products
           // Note: Commerce API returns max 50 per page regardless of limit
-          // Removed status filter to get all products including published ones
         };
 
         console.log(`📄 Fetching page ${pageNum}...`);
