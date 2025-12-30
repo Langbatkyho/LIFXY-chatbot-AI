@@ -39,8 +39,8 @@ const createHaravanClient = (base) => axios.create({
 });
 
 /**
- * Fetch all products from Haravan with cursor-based pagination (since_id)
- * Following Haravan best practices from official documentation
+ * Fetch all products from Haravan with page-based pagination
+ * Note: Commerce API may not support since_id properly, using page parameter instead
  */
 export const fetchAllProducts = async (limit = 250) => {
   try {
@@ -56,7 +56,6 @@ export const fetchAllProducts = async (limit = 250) => {
     const pageSize = Math.min(limit || 250, 250);
 
     let allProducts = [];
-    let sinceId = 0; // Start from beginning
     let pageNum = 1;
     let hasMore = true;
 
@@ -83,23 +82,21 @@ export const fetchAllProducts = async (limit = 250) => {
       return delay(250);
     };
 
-    // Cursor-based pagination using since_id (recommended by Haravan)
-    console.log(`🚀 Starting cursor-based pagination with limit=${pageSize}`);
+    // Page-based pagination (more reliable for Commerce API)
+    console.log(`🚀 Starting page-based pagination with limit=${pageSize}`);
     
-    while (hasMore) {
+    while (hasMore && pageNum <= 100) {
       try {
         const params = {
           limit: pageSize,
+          page: pageNum,
           fields: fields,
           status: 'active',
         };
 
-        // Add since_id for pagination (skip on first request)
-        if (sinceId > 0) {
-          params.since_id = sinceId;
-        }
+        console.log(`📄 Fetching page ${pageNum}...`);
 
-        console.log(`📄 Fetching page ${pageNum}${sinceId > 0 ? ` (since_id: ${sinceId})` : ''}...`);
+        const response = await client.get('/products.json', { params });
 
         const response = await client.get('/products.json', { params });
 
@@ -116,15 +113,11 @@ export const fetchAllProducts = async (limit = 250) => {
         }
 
         allProducts = allProducts.concat(products);
-
-        // Get last product ID for next iteration  
-        const lastProduct = products[products.length - 1];
-        sinceId = lastProduct.id;
         pageNum++;
 
         // Safety check to prevent infinite loops
-        if (pageNum > 1000) {
-          console.warn('⚠️ Reached maximum page limit (1000), stopping');
+        if (pageNum > 100) {
+          console.warn('⚠️ Reached maximum page limit (100), stopping');
           hasMore = false;
         }
 
