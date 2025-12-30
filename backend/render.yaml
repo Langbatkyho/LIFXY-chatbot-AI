@@ -1,3 +1,4 @@
+type: web
 name: lifxy-chatbot-backend
 runtime: node
 plan: free
