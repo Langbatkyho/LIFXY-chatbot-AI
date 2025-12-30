@@ -28,12 +28,19 @@ router.post('/message', async (req, res) => {
     await createChatSession(sessionId, customerEmail, customerName, ipAddress);
 
     // Search for relevant products
-    const keywords = message.match(/\b\w{3,}\b/g) || [];
+    // Extract Vietnamese and English keywords (3+ characters)
+    const keywords = message.match(/[\p{L}\p{N}]{3,}/gu) || [];
     let productContext = '';
     let referencedProducts = [];
 
     if (keywords.length > 0) {
-      const searchResults = await searchProductsInDb(keywords[0]);
+      // Try searching with first keyword, then second if no results
+      let searchResults = [];
+      for (const keyword of keywords.slice(0, 3)) {
+        searchResults = await searchProductsInDb(keyword);
+        if (searchResults.length > 0) break;
+      }
+      
       if (searchResults.length > 0) {
         referencedProducts = searchResults.map(p => ({
           id: p.id,
