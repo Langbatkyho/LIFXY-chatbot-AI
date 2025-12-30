@@ -78,12 +78,26 @@ export const saveProducts = async (products) => {
 
     console.log(`💾 Saving ${products.length} products to database...`);
 
+    // Remove duplicates by haravan_id (keep last occurrence)
+    const uniqueProducts = [];
+    const seenIds = new Set();
+    for (let i = products.length - 1; i >= 0; i--) {
+      if (!seenIds.has(products[i].id)) {
+        seenIds.add(products[i].id);
+        uniqueProducts.unshift(products[i]);
+      }
+    }
+    
+    if (uniqueProducts.length < products.length) {
+      console.log(`⚠️  Removed ${products.length - uniqueProducts.length} duplicate products`);
+    }
+
     // Batch insert - process in chunks of 100 for better performance
     const BATCH_SIZE = 100;
     let savedCount = 0;
 
-    for (let i = 0; i < products.length; i += BATCH_SIZE) {
-      const batch = products.slice(i, i + BATCH_SIZE);
+    for (let i = 0; i < uniqueProducts.length; i += BATCH_SIZE) {
+      const batch = uniqueProducts.slice(i, i + BATCH_SIZE);
       
       // Build bulk insert query
       const values = [];
@@ -120,11 +134,11 @@ export const saveProducts = async (products) => {
 
       await client.query(query, values);
       savedCount += batch.length;
-      console.log(`💾 Progress: ${savedCount}/${products.length} products saved`);
+      console.log(`💾 Progress: ${savedCount}/${uniqueProducts.length} products saved`);
     }
 
     await client.query('COMMIT');
-    console.log(`✅ Successfully saved ${products.length} products to database`);
+    console.log(`✅ Successfully saved ${uniqueProducts.length} products to database`);
   } catch (error) {
     await client.query('ROLLBACK');
     console.error('Error saving products:', error.message);
