@@ -33,19 +33,23 @@ router.post('/message', async (req, res) => {
     let productContext = '';
     let referencedProducts = [];
 
-    if (keywords.length > 0) {
+    // Filter out common Vietnamese stop words
+    const stopWords = ['tôi', 'tớ', 'mình', 'cần', 'muốn', 'mua', 'bán', 'có', 'được', 'này', 'đó', 'thế', 'nào', 'gì', 'cho'];
+    const meaningfulKeywords = keywords.filter(k => !stopWords.includes(k.toLowerCase()));
+
+    if (meaningfulKeywords.length > 0) {
       // Try searching with multiple strategies
       let searchResults = [];
       
-      // Strategy 1: Try full phrase (first 3 keywords combined)
-      if (keywords.length >= 2) {
-        const phrase = keywords.slice(0, 3).join(' ');
+      // Strategy 1: Try full phrase with meaningful keywords (combine first 2-3 words)
+      if (meaningfulKeywords.length >= 2) {
+        const phrase = meaningfulKeywords.slice(0, 3).join(' ');
         searchResults = await searchProductsInDb(phrase);
       }
       
-      // Strategy 2: If no results, try individual keywords
+      // Strategy 2: If no results, try individual meaningful keywords
       if (searchResults.length === 0) {
-        for (const keyword of keywords.slice(0, 5)) {
+        for (const keyword of meaningfulKeywords.slice(0, 5)) {
           searchResults = await searchProductsInDb(keyword);
           if (searchResults.length > 0) break;
         }
