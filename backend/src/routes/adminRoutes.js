@@ -28,17 +28,37 @@ router.post('/sync-products', async (req, res) => {
     const products = await fetchAllProducts();
     console.log(`✅ Fetched ${products.length} products from Haravan`);
 
+    if (products.length === 0) {
+      return res.json({
+        success: true,
+        message: 'No products to sync',
+        count: 0,
+      });
+    }
+
     // Save to database
-    await saveProducts(products);
+    console.log('💾 Saving products to database...');
+    try {
+      await saveProducts(products);
+      console.log(`✅ Save completed for ${products.length} products`);
+    } catch (saveError) {
+      console.error('❌ Save failed:', saveError);
+      throw saveError;
+    }
 
     // Clear cache
     productCache.clear();
     console.log('🗑️ Cache cleared');
 
+    // Verify save by counting
+    const savedProducts = await getAllProducts();
+    console.log(`🔍 Verification: ${savedProducts.length} products in database`);
+
     return res.json({
       success: true,
       message: `Successfully synced ${products.length} products`,
       count: products.length,
+      verified: savedProducts.length,
     });
   } catch (error) {
     console.error('Error syncing products:', error);
