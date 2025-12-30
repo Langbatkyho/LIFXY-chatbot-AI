@@ -99,8 +99,6 @@ export const fetchAllProducts = async (limit = 250) => {
 
         const response = await client.get('/products.json', { params });
 
-        const response = await client.get('/products.json', { params });
-
         const products = response.data?.products || [];
         console.log(`📦 Page ${pageNum}: Got ${products.length} products (total: ${allProducts.length + products.length})`);
 
