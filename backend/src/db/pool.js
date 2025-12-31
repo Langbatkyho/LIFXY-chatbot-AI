@@ -40,17 +40,60 @@ export const initializeDatabase = async (maxRetries = 5, delayMs = 2000) => {
             handle VARCHAR(255),
             vendor VARCHAR(255),
             status VARCHAR(50),
-            usp TEXT,
-            target_audience TEXT,
-            faq JSONB,
-            specifications JSONB,
-            shopee_url TEXT,
-            tiktok_url TEXT,
-            published_at TIMESTAMP,
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
             updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
           );
         `);
+
+        // Add new RAG columns if they don't exist (migration)
+        await client.query(`
+          DO $$ 
+          BEGIN 
+            -- Add usp column
+            IF NOT EXISTS (SELECT 1 FROM information_schema.columns 
+                          WHERE table_name='products' AND column_name='usp') THEN
+              ALTER TABLE products ADD COLUMN usp TEXT;
+            END IF;
+            
+            -- Add target_audience column
+            IF NOT EXISTS (SELECT 1 FROM information_schema.columns 
+                          WHERE table_name='products' AND column_name='target_audience') THEN
+              ALTER TABLE products ADD COLUMN target_audience TEXT;
+            END IF;
+            
+            -- Add faq column
+            IF NOT EXISTS (SELECT 1 FROM information_schema.columns 
+                          WHERE table_name='products' AND column_name='faq') THEN
+              ALTER TABLE products ADD COLUMN faq JSONB;
+            END IF;
+            
+            -- Add specifications column
+            IF NOT EXISTS (SELECT 1 FROM information_schema.columns 
+                          WHERE table_name='products' AND column_name='specifications') THEN
+              ALTER TABLE products ADD COLUMN specifications JSONB;
+            END IF;
+            
+            -- Add shopee_url column
+            IF NOT EXISTS (SELECT 1 FROM information_schema.columns 
+                          WHERE table_name='products' AND column_name='shopee_url') THEN
+              ALTER TABLE products ADD COLUMN shopee_url TEXT;
+            END IF;
+            
+            -- Add tiktok_url column
+            IF NOT EXISTS (SELECT 1 FROM information_schema.columns 
+                          WHERE table_name='products' AND column_name='tiktok_url') THEN
+              ALTER TABLE products ADD COLUMN tiktok_url TEXT;
+            END IF;
+            
+            -- Add published_at column
+            IF NOT EXISTS (SELECT 1 FROM information_schema.columns 
+                          WHERE table_name='products' AND column_name='published_at') THEN
+              ALTER TABLE products ADD COLUMN published_at TIMESTAMP;
+            END IF;
+          END $$;
+        `);
+
+        console.log('✅ Products table schema updated with RAG fields');
 
         // Create full-text search index for better product search
         await client.query(`
