@@ -28,7 +28,7 @@ function extractKeywords(message) {
 
 /**
  * POST /api/chat/message
- * RAG-enhanced chat endpoint
+ * RAG-enhanced chat endpoint with conversation history
  */
 router.post('/message', async (req, res) => {
   try {
@@ -44,11 +44,20 @@ router.post('/message', async (req, res) => {
     const ipAddress = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
     await createChatSession(sessionId, customerEmail, customerName, ipAddress);
 
-    // Step 1: Extract meaningful keywords from user message
-    const keywords = extractKeywords(message);
-    console.log('🔍 Extracted keywords:', keywords);
+    // Step 1: Get conversation history for context
+    const history = await getChatHistory(sessionId, 5); // Last 5 messages
+    console.log(`💬 Loading ${history.length} previous messages for context`);
 
-    // Step 2: Search for relevant products (Retrieval)
+    // Step 2: Combine current message with history context for keyword extraction
+    const contextMessage = history.length > 0
+      ? history.map(h => h.user_message).join(' ') + ' ' + message
+      : message;
+
+    // Step 3: Extract meaningful keywords from combined context
+    const keywords = extractKeywords(contextMessage);
+    console.log('🔍 Extracted keywords from context:', keywords);
+
+    // Step 4: Search for relevant products (Retrieval)
     let relevantProducts = [];
     
     if (keywords.length > 0) {
@@ -71,17 +80,19 @@ router.post('/message', async (req, res) => {
       }
     }
 
-    // Step 3: Build RAG prompt with retrieved products
-    const { systemPrompt, hasProducts } = buildRAGPrompt(message, relevantProducts);
+    // Step 5: Build RAG prompt with retrieved products and conversation history
+    const { systemPrompt, hasProducts } = buildRAGPrompt(message, relevantProducts, history);
     
     console.log('🤖 RAG Context built:');
     console.log('- Has products:', hasProducts);
     console.log('- Product count:', relevantProducts.length);
+    console.log('- History messages:', history.length);
 
-    // Step 4: Generate AI response with context
+    // Step 6: Generate AI response with context
     const botResponse = await generateChatResponse(message, systemPrompt);
 
-    // Step 5: Prepare referenced products
+    // Step 7: Prepare referenced products
+    // Step 7: Prepare referenced products
     const referencedProducts = relevantProducts.map(p => ({
       id: p.id,
       haravan_id: p.haravan_id,
@@ -91,10 +102,10 @@ router.post('/message', async (req, res) => {
       handle: p.handle,
     }));
 
-    // Step 6: Save to database
+    // Step 8: Save to database
     await saveChatMessage(sessionId, message, botResponse, referencedProducts);
 
-    // Step 7: Return response with metadata
+    // Step 9: Return response with metadata
     return res.json({
       response: botResponse,
       referencedProducts,
@@ -102,6 +113,7 @@ router.post('/message', async (req, res) => {
       metadata: {
         productsFound: relevantProducts.length,
         keywords: keywords,
+        historyCount: history.length,
       },
     });
   } catch (error) {

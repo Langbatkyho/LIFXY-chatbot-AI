@@ -111,16 +111,32 @@ export function formatProductContext(products) {
 }
 
 /**
- * Build complete prompt with RAG context
+ * Build complete prompt with RAG context and conversation history
  */
-export function buildRAGPrompt(userMessage, relevantProducts) {
+export function buildRAGPrompt(userMessage, relevantProducts, conversationHistory = []) {
   const productContext = formatProductContext(relevantProducts);
-  const systemPrompt = MASTER_SYSTEM_PROMPT.replace('{{PRODUCT_DATA}}', productContext);
+  
+  // Build conversation history context
+  let historyContext = '';
+  if (conversationHistory && conversationHistory.length > 0) {
+    historyContext = '\n\n[LỊCH SỬ HỘI THOẠI TRƯỚC ĐÓ]:\n';
+    conversationHistory.forEach((msg, idx) => {
+      historyContext += `${idx + 1}. Khách: ${msg.user_message}\n`;
+      historyContext += `   Em: ${msg.bot_response}\n\n`;
+    });
+    historyContext += '[KẾT THÚC LỊCH SỬ]\n';
+    historyContext += '\n⚠️ LƯU Ý: Hãy dựa vào lịch sử hội thoại trên để trả lời câu hỏi tiếp theo của khách một cách mạch lạc và liên tục. Không hỏi lại những gì khách đã trả lời.\n';
+  }
+  
+  const systemPrompt = MASTER_SYSTEM_PROMPT
+    .replace('{{PRODUCT_DATA}}', productContext)
+    .replace('HÃY BẮT ĐẦU TƯ VẤN DỰA TRÊN DỮ LIỆU TRÊN!', historyContext + '\nHÃY BẮT ĐẦU TƯ VẤN DỰA TRÊN DỮ LIỆU VÀ LỊCH SỬ TRÊN!');
   
   return {
     systemPrompt,
     productContext,
-    hasProducts: relevantProducts && relevantProducts.length > 0
+    hasProducts: relevantProducts && relevantProducts.length > 0,
+    hasHistory: conversationHistory && conversationHistory.length > 0
   };
 }
 
