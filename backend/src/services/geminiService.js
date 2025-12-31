@@ -62,7 +62,7 @@ export const generateChatResponse = async (userMessage, systemPrompt = null) => 
 
   const text = await callGemini(finalPrompt, {
     temperature: 0.7,
-    maxOutputTokens: 1024,
+    maxOutputTokens: 2048,
   });
 
   return text;
