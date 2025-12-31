@@ -1,6 +1,7 @@
 {
   "updates": [
     {
+      "_comment": "📝 Bảo hiểm Trách nhiệm dân sự bắt buộc dành cho xe ô tô (dưới 6 chỗ ngồi)",
       "haravan_id": 1063058069,
       "usp": "✓ Bắt buộc theo Nghị định 03/2021 - Tránh phạt đến 8 triệu\n✓ Bảo hiểm 100 triệu/người/vụ - An tâm trên mọi hành trình\n✓ Thanh toán online nhanh 30s - Nhận file PDF ngay",
       "target_audience": "Chủ xe ô tô dưới 6 chỗ cần gia hạn bảo hiểm TNDS. Đặc biệt phù hợp với xe gia đình, xe kinh doanh taxi/Grab.",
@@ -28,7 +29,8 @@
       "shopee_url": null,
       "tiktok_url": null
     },
-    {
+    {_comment": "📝 Bảo hiểm TNDS bắt buộc dành cho mô tô 2 bánh từ 50cc trở lên",
+      "
       "haravan_id": 1067794067,
       "usp": "✓ Bắt buộc theo luật - Tránh phạt 400-600k\n✓ Bảo hiểm 50 triệu/người/vụ cho xe mô tô >50cc\n✓ Thanh toán online - Nhận file PDF ngay",
       "target_audience": "Chủ xe mô tô, xe máy từ 50cc trở lên cần mua hoặc gia hạn bảo hiểm TNDS. Phù hợp với xe cá nhân, xe kinh doanh.",
@@ -51,7 +53,8 @@
       "shopee_url": null,
       "tiktok_url": null
     },
-    {
+    {_comment": "📝 Bảo hiểm Trách nhiệm dân sự bắt buộc dành cho xe ô tô (trên 24 chỗ ngồi)",
+      "
       "haravan_id": 1063058381,
       "usp": "✓ Bảo hiểm TNDS bắt buộc cho xe >24 chỗ\n✓ Bảo hiểm 100 triệu/người/vụ - An toàn hành khách\n✓ Thanh toán online tiện lợi",
       "target_audience": "Chủ xe khách, xe buýt trên 24 chỗ. Công ty vận tải hành khách, nhà xe liên tỉnh.",
