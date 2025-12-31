@@ -1,6 +1,32 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './ChatWidget.css';
 
+// Simple Markdown-to-HTML renderer
+const parseMarkdown = (text) => {
+  if (!text) return '';
+  
+  let html = text
+    // Bold: **text** or __text__
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/__(.+?)__/g, '<strong>$1</strong>')
+    
+    // Links: [text](url)
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
+    
+    // Line breaks
+    .replace(/\n/g, '<br/>')
+    
+    // Bullet points: • or -
+    .replace(/^[•\-]\s+(.+)$/gm, '<li>$1</li>');
+  
+  // Wrap <li> in <ul> if present
+  if (html.includes('<li>')) {
+    html = html.replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>');
+  }
+  
+  return html;
+};
+
 const ChatWidget = ({ apiUrl = 'https://lifxy-chatbot-api.onrender.com' }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([]);
@@ -155,9 +181,10 @@ const ChatWidget = ({ apiUrl = 'https://lifxy-chatbot-api.onrender.com' }) => {
             ) : (
               messages.map((msg, idx) => (
                 <div key={idx} className={`chat-message ${msg.type}`}>
-                  <div className="message-content">
-                    {msg.content}
-                  </div>
+                  <div 
+                    className="message-content"
+                    dangerouslySetInnerHTML={{ __html: parseMarkdown(msg.content) }}
+                  />
                   {msg.products && msg.products.length > 0 && (
                     <div className="message-products">
                       {msg.products.map((product, pidx) => (
