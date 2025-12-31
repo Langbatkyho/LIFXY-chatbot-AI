@@ -1,0 +1,78 @@
+{
+  "updates": [
+    {
+      "haravan_id": 1063058069,
+      "usp": "✓ Bắt buộc theo Nghị định 03/2021 - Tránh phạt đến 8 triệu\n✓ Bảo hiểm 100 triệu/người/vụ - An tâm trên mọi hành trình\n✓ Thanh toán online nhanh 30s - Nhận file PDF ngay",
+      "target_audience": "Chủ xe ô tô dưới 6 chỗ cần gia hạn bảo hiểm TNDS. Đặc biệt phù hợp với xe gia đình, xe kinh doanh taxi/Grab.",
+      "faq": [
+        {
+          "question": "Mua bảo hiểm online có hợp pháp không?",
+          "answer": "Hoàn toàn hợp pháp. Bảo hiểm online đã được Bộ Tài chính cho phép theo Thông tư 04/2021."
+        },
+        {
+          "question": "Nhận giấy chứng nhận ở đâu?",
+          "answer": "Ship tận nhà trong 24-48h (miễn phí nội thành) hoặc nhận file PDF qua email ngay sau khi thanh toán."
+        },
+        {
+          "question": "Giá này đã bao gồm phí đường bộ chưa?",
+          "answer": "Chưa ạ. Đây là phí bảo hiểm TNDS. Phí đường bộ anh/chị đóng riêng tại cơ quan thuế."
+        }
+      ],
+      "specifications": {
+        "Loại xe": "Ô tô dưới 6 chỗ (không kinh doanh vận tải)",
+        "Thời hạn bảo hiểm": "12 tháng",
+        "Số tiền bảo hiểm": "100.000.000 VNĐ/người/vụ",
+        "Phạm vi": "Toàn quốc",
+        "Công ty bảo hiểm": "Bảo Việt / PVI / BSH"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "haravan_id": 1067794067,
+      "usp": "✓ Bắt buộc theo luật - Tránh phạt 400-600k\n✓ Bảo hiểm 50 triệu/người/vụ cho xe mô tô >50cc\n✓ Thanh toán online - Nhận file PDF ngay",
+      "target_audience": "Chủ xe mô tô, xe máy từ 50cc trở lên cần mua hoặc gia hạn bảo hiểm TNDS. Phù hợp với xe cá nhân, xe kinh doanh.",
+      "faq": [
+        {
+          "question": "Xe máy dưới 50cc có bắt buộc mua không?",
+          "answer": "Không bắt buộc ạ. Chỉ xe từ 50cc trở lên mới bắt buộc mua bảo hiểm TNDS."
+        },
+        {
+          "question": "Mất giấy chứng nhận thì làm sao?",
+          "answer": "Anh/chị liên hệ hotline, em sẽ hỗ trợ cấp lại hoặc gửi file PDF qua email miễn phí."
+        }
+      ],
+      "specifications": {
+        "Loại xe": "Mô tô 2 bánh từ 50cc trở lên",
+        "Thời hạn": "12 tháng",
+        "Số tiền bảo hiểm": "50.000.000 VNĐ/người/vụ",
+        "Phạm vi": "Toàn quốc"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "haravan_id": 1063058381,
+      "usp": "✓ Bảo hiểm TNDS bắt buộc cho xe >24 chỗ\n✓ Bảo hiểm 100 triệu/người/vụ - An toàn hành khách\n✓ Thanh toán online tiện lợi",
+      "target_audience": "Chủ xe khách, xe buýt trên 24 chỗ. Công ty vận tải hành khách, nhà xe liên tỉnh.",
+      "faq": [
+        {
+          "question": "Xe khách cần loại bảo hiểm nào?",
+          "answer": "Cần mua 2 loại: TNDS bắt buộc (như sản phẩm này) + TNDS người ngồi trên xe (tùy chọn)."
+        },
+        {
+          "question": "Có hỗ trợ mua nhiều xe không?",
+          "answer": "Có ạ. Anh/chị liên hệ để được báo giá ưu đãi cho đội xe."
+        }
+      ],
+      "specifications": {
+        "Loại xe": "Ô tô trên 24 chỗ ngồi (xe khách, xe buýt)",
+        "Thời hạn": "12 tháng",
+        "Số tiền bảo hiểm": "100.000.000 VNĐ/người/vụ",
+        "Phạm vi": "Toàn quốc"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    }
+  ]
+}
