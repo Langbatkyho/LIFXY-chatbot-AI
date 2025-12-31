@@ -196,7 +196,7 @@ export const searchProductsInDb = async (keyword) => {
         ) @@ plainto_tsquery('english', $1)
     )
     ORDER BY relevance DESC, title ASC
-    LIMIT 5;
+    LIMIT 3;
   `;
 
   try {

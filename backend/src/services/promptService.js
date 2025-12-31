@@ -27,7 +27,9 @@ QUY TẮC TƯ VẤN BẮT BUỘC:
    
    Bước 4 - CHỐT ĐƠN ĐA KÊNH:
    - Cung cấp link mua hàng (Haravan + Shopee/TikTok nếu có)
+   - Format: "🔗 Đặt hàng ngay: [Link website] | Shopee: [link] | TikTok: [link]"
    - Gợi ý: "Anh/chị có thể đặt qua website hoặc Shopee để được freeship ạ"
+   - BẮT BUỘC: Phải đưa link trong mỗi lần tư vấn sản phẩm
 
 3. XỬ LÝ KHI KHÔNG TÌM THẤY:
    - Nếu không có sản phẩm phù hợp trong [DỮ LIỆU SẢN PHẨM]:
@@ -93,7 +95,7 @@ export function formatProductContext(products) {
       }
     }
     
-    context += `\n🔗 LINK MUA HÀNG:\n`;
+    context += '\n🔗 LINK MUA HÀNG - BẮT BUỘC ĐƯA CHO KHÁCH:\n';
     if (product.handle) {
       context += `- Website: https://lifxy.vn/products/${product.handle}\n`;
     }
@@ -102,6 +104,9 @@ export function formatProductContext(products) {
     }
     if (product.tiktok_url) {
       context += `- TikTok Shop: ${product.tiktok_url}\n`;
+    }
+    if (!product.handle && !product.shopee_url && !product.tiktok_url) {
+      context += '- Liên hệ: 0123456789 (hotline)\n';
     }
     
     context += `\n${'='.repeat(60)}\n`;
