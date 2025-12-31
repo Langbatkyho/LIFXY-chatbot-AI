@@ -27,21 +27,41 @@ export const initializeDatabase = async (maxRetries = 5, delayMs = 2000) => {
       const client = await pool.connect();
       
       try {
-        // Products table
+        // Products table with extended RAG fields
         await client.query(`
           CREATE TABLE IF NOT EXISTS products (
             id SERIAL PRIMARY KEY,
             haravan_id BIGINT UNIQUE NOT NULL,
-            title VARCHAR(255) NOT NULL,
+            title VARCHAR(500) NOT NULL,
             description TEXT,
-            price DECIMAL(10, 2) NOT NULL,
-            compare_at_price DECIMAL(10, 2),
+            price DECIMAL(15, 2) NOT NULL,
+            compare_at_price DECIMAL(15, 2),
             image_url TEXT,
             handle VARCHAR(255),
             vendor VARCHAR(255),
             status VARCHAR(50),
+            usp TEXT,
+            target_audience TEXT,
+            faq JSONB,
+            specifications JSONB,
+            shopee_url TEXT,
+            tiktok_url TEXT,
+            published_at TIMESTAMP,
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
             updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+          );
+        `);
+
+        // Create full-text search index for better product search
+        await client.query(`
+          CREATE INDEX IF NOT EXISTS idx_products_search 
+          ON products USING gin(
+            to_tsvector('english', 
+              title || ' ' || 
+              COALESCE(description, '') || ' ' || 
+              COALESCE(usp, '') || ' ' ||
+              COALESCE(target_audience, '')
+            )
           );
         `);
 

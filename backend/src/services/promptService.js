@@ -1,0 +1,127 @@
+/**
+ * Master Prompt System for RAG-based product consultation
+ */
+
+const MASTER_SYSTEM_PROMPT = `HƯỚNG DẪN HỆ THỐNG: Bạn là trợ lý bán hàng chuyên nghiệp và thân thiện cho Lifxy.vn - chuyên cung cấp phụ kiện ô tô chất lượng cao.
+
+QUY TẮC TƯ VẤN BẮT BUỘC:
+
+1. SỬ DỤNG DỮ LIỆU CHÍNH XÁC:
+   - Chỉ sử dụng thông tin từ phần [DỮ LIỆU SẢN PHẨM] được cung cấp bên dưới
+   - KHÔNG tự bịa ra thông số, giá cả, hoặc tính năng không có trong dữ liệu
+   - Nếu không có thông tin, hãy thừa nhận và đề xuất giải pháp thay thế
+
+2. QUY TRÌNH TƯ VẤN 4 BƯỚC:
+   
+   Bước 1 - THĂM HỎI: 
+   - Hỏi về nhu cầu cụ thể, tình trạng hiện tại
+   - Ví dụ: "Anh/chị đang gặp vấn đề gì với xe ạ?"
+   
+   Bước 2 - GỢI Ý GIẢI PHÁP:
+   - Đề xuất 2-3 sản phẩm phù hợp nhất từ danh sách tìm được
+   - Giải thích TẠI SAO sản phẩm này phù hợp (dựa vào USP)
+   
+   Bước 3 - TƯ VẤN CHI TIẾT:
+   - Hướng dẫn chọn size/thông số phù hợp
+   - Trả lời FAQ nếu khách hỏi
+   
+   Bước 4 - CHỐT ĐƠN ĐA KÊNH:
+   - Cung cấp link mua hàng (Haravan + Shopee/TikTok nếu có)
+   - Gợi ý: "Anh/chị có thể đặt qua website hoặc Shopee để được freeship ạ"
+
+3. XỬ LÝ KHI KHÔNG TÌM THẤY:
+   - Nếu không có sản phẩm phù hợp trong [DỮ LIỆU SẢN PHẨM]:
+   - Nói: "Em chưa tìm thấy sản phẩm phù hợp trong kho hiển thị. Anh/chị vui lòng để lại SĐT, bộ phận kỹ thuật sẽ kiểm tra kho và gọi lại trong 30 phút ạ!"
+
+4. PHONG CÁCH GIAO TIẾP:
+   - Xưng hô: "Anh/chị" và "em"
+   - Ngắn gọn, dễ hiểu, không dùng thuật ngữ khó
+   - Emoji phù hợp: 🚗 ✅ 💯 🎁
+   - Luôn kết thúc bằng câu hỏi mở để duy trì hội thoại
+
+---
+
+[DỮ LIỆU SẢN PHẨM TRUY XUẤT ĐƯỢC]:
+{{PRODUCT_DATA}}
+
+---
+
+HÃY BẮT ĐẦU TƯ VẤN DỰA TRÊN DỮ LIỆU TRÊN!`;
+
+/**
+ * Format product data for RAG context
+ */
+export function formatProductContext(products) {
+  if (!products || products.length === 0) {
+    return "Không tìm thấy sản phẩm phù hợp trong cơ sở dữ liệu.";
+  }
+
+  return products.map((product, index) => {
+    let context = `\n【SẢN PHẨM ${index + 1}】\n`;
+    context += `📌 Tên: ${product.title}\n`;
+    context += `💰 Giá: ${Number(product.price).toLocaleString('vi-VN')}đ\n`;
+    
+    if (product.usp) {
+      context += `\n⭐ 3 ĐIỂM MẠNH:\n${product.usp}\n`;
+    }
+    
+    if (product.target_audience) {
+      context += `\n👤 AI NÊN DÙNG:\n${product.target_audience}\n`;
+    }
+    
+    if (product.faq) {
+      context += `\n❓ FAQ:\n`;
+      const faqData = typeof product.faq === 'string' ? JSON.parse(product.faq) : product.faq;
+      if (Array.isArray(faqData)) {
+        faqData.forEach(item => {
+          context += `Q: ${item.question}\nA: ${item.answer}\n\n`;
+        });
+      } else if (typeof faqData === 'object') {
+        Object.entries(faqData).forEach(([q, a]) => {
+          context += `Q: ${q}\nA: ${a}\n\n`;
+        });
+      }
+    }
+    
+    if (product.specifications) {
+      context += `\n📏 THÔNG SỐ:\n`;
+      const specs = typeof product.specifications === 'string' ? JSON.parse(product.specifications) : product.specifications;
+      if (typeof specs === 'object') {
+        Object.entries(specs).forEach(([key, value]) => {
+          context += `- ${key}: ${value}\n`;
+        });
+      }
+    }
+    
+    context += `\n🔗 LINK MUA HÀNG:\n`;
+    if (product.handle) {
+      context += `- Website: https://lifxy.vn/products/${product.handle}\n`;
+    }
+    if (product.shopee_url) {
+      context += `- Shopee: ${product.shopee_url}\n`;
+    }
+    if (product.tiktok_url) {
+      context += `- TikTok Shop: ${product.tiktok_url}\n`;
+    }
+    
+    context += `\n${'='.repeat(60)}\n`;
+    
+    return context;
+  }).join('\n');
+}
+
+/**
+ * Build complete prompt with RAG context
+ */
+export function buildRAGPrompt(userMessage, relevantProducts) {
+  const productContext = formatProductContext(relevantProducts);
+  const systemPrompt = MASTER_SYSTEM_PROMPT.replace('{{PRODUCT_DATA}}', productContext);
+  
+  return {
+    systemPrompt,
+    productContext,
+    hasProducts: relevantProducts && relevantProducts.length > 0
+  };
+}
+
+export { MASTER_SYSTEM_PROMPT };

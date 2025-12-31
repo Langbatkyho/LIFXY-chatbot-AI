@@ -164,21 +164,109 @@ export const getAllProducts = async () => {
 };
 
 /**
- * Search products in database
+ * Search products in database with full-text search and relevance ranking
  */
 export const searchProductsInDb = async (keyword) => {
   const query = `
-    SELECT * FROM products
-    WHERE title ILIKE $1 OR description ILIKE $1 OR vendor ILIKE $1
+    SELECT 
+      id, haravan_id, title, description, price, compare_at_price,
+      image_url, handle, vendor, status,
+      usp, target_audience, faq, specifications, shopee_url, tiktok_url,
+      ts_rank(
+        to_tsvector('english', 
+          title || ' ' || 
+          COALESCE(description, '') || ' ' || 
+          COALESCE(usp, '') || ' ' ||
+          COALESCE(target_audience, '')
+        ), 
+        plainto_tsquery('english', $1)
+      ) as relevance
+    FROM products 
+    WHERE (
+      title ILIKE $2 
+      OR description ILIKE $2 
+      OR vendor ILIKE $2
+      OR usp ILIKE $2
+      OR target_audience ILIKE $2
+      OR to_tsvector('english', 
+          title || ' ' || 
+          COALESCE(description, '') || ' ' || 
+          COALESCE(usp, '') || ' ' ||
+          COALESCE(target_audience, '')
+        ) @@ plainto_tsquery('english', $1)
+    )
+    ORDER BY relevance DESC, title ASC
     LIMIT 5;
   `;
 
   try {
-    const result = await pool.query(query, [`%${keyword}%`]);
+    const result = await pool.query(query, [keyword, `%${keyword}%`]);
     return result.rows;
   } catch (error) {
     console.error('Error searching products:', error.message);
     throw new Error(`Failed to search products: ${error.message}`);
+  }
+};
+
+/**
+ * Bulk update product information (for admin use)
+ */
+export const bulkUpdateProducts = async (updates) => {
+  const client = await pool.connect();
+  
+  try {
+    await client.query('BEGIN');
+    
+    let updatedCount = 0;
+    let errors = [];
+    
+    for (const update of updates) {
+      try {
+        const { haravan_id, usp, target_audience, faq, specifications, shopee_url, tiktok_url } = update;
+        
+        const query = `
+          UPDATE products 
+          SET 
+            usp = COALESCE($2, usp),
+            target_audience = COALESCE($3, target_audience),
+            faq = COALESCE($4::jsonb, faq),
+            specifications = COALESCE($5::jsonb, specifications),
+            shopee_url = COALESCE($6, shopee_url),
+            tiktok_url = COALESCE($7, tiktok_url),
+            updated_at = CURRENT_TIMESTAMP
+          WHERE haravan_id = $1
+          RETURNING id;
+        `;
+        
+        const result = await client.query(query, [
+          haravan_id,
+          usp || null,
+          target_audience || null,
+          faq ? JSON.stringify(faq) : null,
+          specifications ? JSON.stringify(specifications) : null,
+          shopee_url || null,
+          tiktok_url || null
+        ]);
+        
+        if (result.rowCount > 0) {
+          updatedCount++;
+        } else {
+          errors.push({ haravan_id, error: 'Product not found' });
+        }
+      } catch (error) {
+        errors.push({ haravan_id: update.haravan_id, error: error.message });
+      }
+    }
+    
+    await client.query('COMMIT');
+    
+    return { updatedCount, errors };
+  } catch (error) {
+    await client.query('ROLLBACK');
+    console.error('Error bulk updating products:', error.message);
+    throw new Error(`Failed to bulk update products: ${error.message}`);
+  } finally {
+    client.release();
   }
 };
 

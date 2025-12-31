@@ -49,14 +49,20 @@ async function callGemini(prompt, options = {}) {
   }
 }
 
-export const generateChatResponse = async (userMessage, productContext = '') => {
-  const systemPrompt = `You are a helpful and friendly customer service chatbot for CarMate - an automotive e-commerce website.\n\n${productContext ? `Here are the relevant products available:\n${productContext}\n` : ''}\nGuidelines:\n- Be professional but friendly and conversational\n- Ask clarifying questions to understand customer needs\n- Recommend relevant products based on their requirements\n- Provide product information accurately\n- If you mention a product, include its name and approximate price\n- Suggest similar products or complementary items\n- Be honest if we don't have what they're looking for\n- Encourage them to browse the website for more options\n- Respond in the same language as the customer\n\nImportant: Always prioritize being helpful and providing accurate product information.`;
+/**
+ * Generate chat response with custom system prompt (RAG support)
+ */
+export const generateChatResponse = async (userMessage, systemPrompt = null) => {
+  // Use custom system prompt if provided (for RAG), otherwise use default
+  const defaultPrompt = `You are a helpful and friendly customer service chatbot for Lifxy.vn - an automotive accessories e-commerce website.\n\nGuidelines:\n- Be professional but friendly and conversational\n- Ask clarifying questions to understand customer needs\n- Recommend relevant products based on their requirements\n- Provide product information accurately\n- If you mention a product, include its name and approximate price\n- Suggest similar products or complementary items\n- Be honest if we don't have what they're looking for\n- Encourage them to browse the website for more options\n- Respond in the same language as the customer (preferably Vietnamese)\n\nImportant: Always prioritize being helpful and providing accurate product information.`;
 
-  const prompt = `${systemPrompt}\n\nCustomer message: ${userMessage}`;
+  const finalPrompt = systemPrompt 
+    ? `${systemPrompt}\n\n---\n\nKHÁCH HÀNG HỎI: ${userMessage}`
+    : `${defaultPrompt}\n\nCustomer message: ${userMessage}`;
 
-  const text = await callGemini(prompt, {
-    temperature: config.gemini.temperature,
-    maxOutputTokens: config.gemini.maxTokens,
+  const text = await callGemini(finalPrompt, {
+    temperature: 0.7,
+    maxOutputTokens: 1024,
   });
 
   return text;
