@@ -12,6 +12,7 @@ echo '  "updates": ['
 curl -s "${API_URL}/api/products?limit=200" | jq -r '
 .products[] | 
 "    {
+      \"_comment\": \"📝 \(.title)\",
       \"haravan_id\": \(.haravan_id),
       \"usp\": \"✓ [ĐIỂM NỔI BẬT 1]\\n✓ [ĐIỂM NỔI BẬT 2]\\n✓ [ĐIỂM NỔI BẬT 3]\",
       \"target_audience\": \"[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]\",

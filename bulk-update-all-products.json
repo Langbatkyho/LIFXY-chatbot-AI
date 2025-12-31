@@ -1,0 +1,2327 @@
+{
+  "updates": [
+    {
+      "_comment": "📝 Bảo hiểm TNDS bắt buộc dành cho mô tô 2 bánh từ 50cc trở lên",
+      "haravan_id": 1065027391,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 Bảo hiểm Trách nhiệm dân sự bắt buộc dành cho xe ô tô (dưới 6 chỗ ngồi)",
+      "haravan_id": 1063058069,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 Bảo hiểm Trách nhiệm dân sự bắt buộc dành cho xe ô tô (trên 24 chỗ ngồi)",
+      "haravan_id": 1063058381,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 Bảo hiểm Trách nhiệm dân sự bắt buộc dành cho xe ô tô (từ 12-24 chỗ ngồi)",
+      "haravan_id": 1063058273,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 Bảo hiểm Trách nhiệm dân sự bắt buộc dành cho xe ô tô (từ 6-11 chỗ ngồi)",
+      "haravan_id": 1063058221,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 Bảo hiểm Trách nhiệm dân sự bắt buộc dành cho xe ô tô (vừa chở người vừa chở hàng)",
+      "haravan_id": 1063058398,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 Nút điện thoại Telephone/Typewritter",
+      "haravan_id": 1066618040,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 Pack viên sáp thơm Cyberpunk",
+      "haravan_id": 1066261288,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 Phụ kiện The RING/The BoltX",
+      "haravan_id": 1064519180,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The ActivPro Mizuno | Đai bảo vệ đầu gối hàng đầu Nhật Bản, phòng tránh chấn thương, thoáng khí & siêu êm, nhỏ gon",
+      "haravan_id": 1070652378,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The AeroBrace Mizuno | Đai Bảo Vệ Cổ Tay Chuyên Dụng Cho Pickleball, Chuẩn Nhật Bản Cao Cấp",
+      "haravan_id": 1071688364,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The AlignFit Li-Ning | Tất hỗ trợ và điều chỉnh vòm chân bẹt đa năng, giảm áp lực và bảo vệ khớp khi chơi thể thao",
+      "haravan_id": 1067268112,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The AlignStep BORSU | Chỉnh dáng bàn chân chuẩn tư thế công nghệ Đức, chỉnh độ cong linh hoạt, hỗ trợ cải thiện lệch xương chuyên dụng",
+      "haravan_id": 1067387725,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The Antidust | Khăn lau cao cấp cho xe hơi",
+      "haravan_id": 1063773250,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The AquaBuddy ANTA | Mũ Bơi Trẻ Em Thiết Kế 3D – Ôm Sát Đầu Và Tai, Êm Ái, Không Trượt, Tăng Cường Thoải Mái Cho Trẻ Vận Động",
+      "haravan_id": 1067934972,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The AquaCap LiNing | Mũ Bơi Silicone Thiết Kế 3D Không Gây Đau Tai, Không Lo Rơi Trượt",
+      "haravan_id": 1066700259,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The AquaCool ANTA | Kính Bơi Thời Trang Tầm Nhìn Vô Cực, Chống Sương Mù & Chống Thấm, Viền Silicone Ôm Sát Thoải Mái, Đa Dạng Màu Sắc Cá Tính",
+      "haravan_id": 1067962665,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The ArmorFlash RGR | Đệm Bảo Vệ Khuỷu Tay Trẻ Em Tích Hợp Đệm EVA Chống Va Chạm Mạnh, Ôm Sát, Thoáng Khí, Thoải Mái, Phong Cách Thể Thao Cá Tính",
+      "haravan_id": 1067963371,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The ArmorSkin Mizuno | Quần Bơi Chuyên Dụng Tích Hợp Công Nghệ Invisible Socket Armor Bảo Vệ Vùng Nhạy Cảm, Chống Cuộn Viền, Độ Đàn Hồi Cao Cho Phép Bơi Lội Thoải Mái (UPF 50+, Spandex, Chlorine Resistance)",
+      "haravan_id": 1066964022,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The BackCore Zeamo | Đai Định Hình Cột Sống Công Thái Học, Chỉnh Tư Thế, Hỗ Trợ Phục Hồi & Phòng Ngừa Chấn Thương Lưng",
+      "haravan_id": 1066737034,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The BoosterX Li-Ning | Đệm bảo vệ xương bánh chè & dây chằng đầu gối, tránh chấn thương, thoáng khí & siêu gọn (kháng khuẩn 3A, silicone 14mm)",
+      "haravan_id": 1067328289,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The BoostUp RGR | Đai bảo vệ mắt cá chân thoáng khí, kết hợp dây điều chỉnh co giãn, hỗ trợ bảo vệ và ổn định mắt cá chân khi vận động",
+      "haravan_id": 1067917646,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The ChillMate ANTA | Khăn lạnh thoáng khí, làm mát tức thì, thấm hút mồ hôi vượt trội, giảm che phủ da, tăng sự thoải mái",
+      "haravan_id": 1067747306,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The Clamp - Giá đỡ điện thoại LISEN cho xe đạp",
+      "haravan_id": 1063780093,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The Cloud Mirror Yassia | Bộ Sưu Tập Dép Thời Trang Phong Cách Thời Thượng, Sang Trọng, Đậm Chất Đô Thị, Ấn Định Cá Tính Riêng",
+      "haravan_id": 1068894925,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The CocoShell UenoPlanet | Bộ Sưu Tập Dép Thể Thao Đột Phá, Phối Màu Cá Tính, Thiết Kế Siêu Thoáng Khí, Êm Ái Và Linh Hoạt Trên Từng Bước Chân",
+      "haravan_id": 1069664414,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The ComfyFoap | Gối Tựa Lưng Xe Hơi Memory Foam Công Nghệ NASA, Công Thái Học Giảm Đau Mỏi, Lõi Đệm Mềm Mại Ổn Định",
+      "haravan_id": 1071563808,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The ComfyGem | Đệm Tựa Xe Hơi Công Thái Học Cao Cấp, Mềm mại êm ái, nâng tầm nội thất xe sang trọng",
+      "haravan_id": 1071438908,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The ComfyGlow | Gối tựa lưng cao cấp giảm áp lực thắt lưng, mang lại cảm giác êm ái khi ngồi lâu.",
+      "haravan_id": 1071777954,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The ComfyKidRest | Đồng hành êm ái cùng bé mỗi chuyến đi",
+      "haravan_id": 1071867035,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The ComfyLumi | Hỗ trợ cột sống tối ưu, nâng đỡ chuẩn công thái học",
+      "haravan_id": 1071881026,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The ComfyPrime | Gối tựa xe hơi công thái học cao cấp, mềm mại êm ái, nâng tầm nội thất xe sang trọng, cá tính",
+      "haravan_id": 1071173963,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The ComfyRab | Gối Đa Năng Công Thái Học Cao Cấp – Êm Ái Chuẩn Hạng Thương Gia, Thư Giãn Mọi Lúc, Mọi Nơi.",
+      "haravan_id": 1071505149,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The ComfySeat | Đệm công thái học cao cấp, mềm mại êm ái",
+      "haravan_id": 1071736987,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The ComfySit | Đệm Ngồi Công Thái Học MIIOW Cao Cấp, Chuyên Gia Chứng Nhận, Khô Thoáng Bốn Mùa Giảm Áp Lực Toàn Diện",
+      "haravan_id": 1071574250,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 [THẺ CỨNG] Gói 24 Tháng Dịch Vụ Cứu Hộ Chuẩn Nhật: Kích Bình, Sửa Khóa, Giao Xăng, Vá Săm Lốp Miễn Phí Không Giới Hạn (JustRide & ZuttoRide)",
+      "haravan_id": 1070433272,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The DryFit Mizuno | Đệm bảo vệ cổ tay co giãn, thoáng khí, hỗ trợ giảm chấn thương, tăng cường sức mạnh cổ tay, thoải mái vận động",
+      "haravan_id": 1067776828,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The Elf 2.0 Veidoorn | Bộ Sưu Tập Dép Thời Trang Cá Tính Thiết Kế Đế Rãnh Hiện Đại, Phong Cách Nổi Bật Cho Mùa Hè 2025",
+      "haravan_id": 1068141612,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The ErgoFit Mizuno | Bảo vệ khuỷu tay tối ưu, giảm va đập và ngăn ngừa chấn thương hiệu quả.",
+      "haravan_id": 1071852648,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The EverCaft Mizuno | Đai bảo vệ bắp chân tích hợp công nghệ giảm chấn, hỗ trợ lưu thông máu, tăng hiệu suất vận động",
+      "haravan_id": 1067292315,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The FairyCap ANTA | Mũ Bơi Thời Trang Cho Bé Gái Tóc Dài, Thiết Kế Bịt Tai, Co Giãn Ôm Sát, Chống Thấm Tuyệt Đối, Tự Tin Bơi Lội",
+      "haravan_id": 1067980528,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The FeetUp Mizuno | Đai Bảo Vệ Mắt Cá Siêu Mỏng 0.9mm, Ngăn Bong Gân, Thoải Mái Cả Khi Mang Giày Chạy",
+      "haravan_id": 1066744350,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The FlexShield Premium Mizuno | Đai bảo vệ đầu gối công nghệ Dynamotion Fit và MIZUNO 3D, nén X kép độc quyền, thiết kế 360 độ cố định, bảo vệ & phòng tránh chấn thương hiệu quả",
+      "haravan_id": 1070186009,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The Flow | Bình Nước & Khay Thức Ăn Dành Cho Thú Cưng",
+      "haravan_id": 1064238608,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The FreshMove ANTA | Đệm bảo vệ đầu gối tích hợp vải 3D thoáng khí, công nghệ kháng khuẩn, thiết kế 360° ôm sát, co giãn, phòng ngừa và phục hồi chấn thương hiệu quả",
+      "haravan_id": 1067857347,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The GlowShot | Màn hình phụ mini từ tính, chụp ảnh Bluetooth tiện lợi",
+      "haravan_id": 1064086509,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The GoBrace Mizuno | Băng Cố Định Cổ Tay Thoáng Khí, Giảm Áp Lực, Chinh Phục Mọi Thử Thách Thể Thao",
+      "haravan_id": 1066717358,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The Goofy Shark Shaji | Dép Quái Vật Dễ Thương, Cá Tính, Chống Trơn Trượt, Mài Mòn, Nổi Bật Mọi Outfit",
+      "haravan_id": 1069957000,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The Gremlin | Hộp đựng giấy ăn cho xe hơi",
+      "haravan_id": 1063772393,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The Hawk Eye Veidoorn | Bộ Sưu Tập Dép Thể Thao Phong Cách Đôi Mắt Đại Bàng Thiết Kế Độc Đáo, Xu Hướng Thời Trang Hiện Đại 2025",
+      "haravan_id": 1068253065,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The HeadBitz Mizuno | Băng Đô Thể Thao Chuyên Dụng Thấm Hút Mồ Hôi, Co Giãn Ôm Sát, Nhẹ Và Bền",
+      "haravan_id": 1066995529,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The HoldX | Băng đeo tay thể thao tích hợp giá đỡ điện thoại",
+      "haravan_id": 1063813623,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The Ironclad RGR | Đệm Bảo Vệ Đầu Gối Thể Thao Thoáng Khí, Đàn Hồi Vượt Trội, Chống Mài Mòn, Ôm Sát, Phù Hợp Nhiều Kích Cỡ, Tối Ưu Vận Động",
+      "haravan_id": 1067949335,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The JointMotion RGR | Đai Bảo Vệ Đầu Gối Tích Hợp Đệm Giảm Chấn EVA, Bảo Vệ Toàn Diện, Ổn Định Khớp Gối, Hỗ Trợ Vận Động Linh Hoạt & Phục Hồi Chấn Thương",
+      "haravan_id": 1066996707,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The JointStrap Mizuno | Đai bảo vệ xương bánh chè & dây chằng đầu gối, phòng tránh chấn thương, thoáng khí & siêu gọn (kháng khuẩn 3A, silicone 14mm)",
+      "haravan_id": 1069886024,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The JointStrap Premium Mizuno | Đai bảo vệ xương bánh chè & dây chằng đầu gối Nhật Bản, phòng tránh chấn thương, thoáng khí & siêu gọn",
+      "haravan_id": 1070281319,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The JumpFit ANTA | Đệm Bảo Vệ Đầu Gối Trẻ Em, Tích Hợp Lớp Đệm Dày 1cm, Chống Va Chạm, Giảm Xóc Tối Ưu, Thoáng Khí, An Toàn Vận Động",
+      "haravan_id": 1067872844,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The LilyWave ANTA | Đồ Bơi Trẻ Em Thời Trang, Chống Tia UV Toàn Diện, Co Giãn 3D, Kháng Clo, Thoải Mái Vận Động",
+      "haravan_id": 1068003736,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The LockX - Ốp lưng cao cấp đa công năng cho iPhone",
+      "haravan_id": 1063661496,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The LocoCal | The Mechanical Switch Calculator",
+      "haravan_id": 1054053371,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The Lonely Planet | Mô hình sáp thơm xe hơi",
+      "haravan_id": 1055611802,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The MagCool | Bình giữ nhiệt tích hợp giá đỡ điện thoại xoay 360°",
+      "haravan_id": 1063783593,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The Micro Folio",
+      "haravan_id": 1063784163,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The MimiX | Gối Tựa Đầu Xe Hơi Công Thái Học",
+      "haravan_id": 1063771257,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The MimiX | Gối Tựa Lưng Xe Hơi Công Thái Học (Chỉ gồm tựa lưng)",
+      "haravan_id": 1070384986,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The Mini Shark RGR | Bộ Sưu Tập Dép Thời Trang Với Thiết Kế Lấy Cảm Hứng Từ Cá Mập, Tích Hợp Kháng Khuẩn Toàn Diện, Khẳng Định Vị Thế Dẫn Đầu, Chinh Phục Mọi Giới Hạn Với Mỗi Bước Chân",
+      "haravan_id": 1068922062,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The MoveWave Mizuno | Mũ Bơi Chuyên Dụng Cho Phụ Nữ Tóc Dài, Chất Liệu Silicone Cao Cấp, Co Giãn Chống Trượt, Ôm Sát 360°",
+      "haravan_id": 1066744418,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The NightFury Shaji | Dép Rồng Răng Sún Huyền Bí, Mắt Xanh Nổi Bật,  Đế EVA Êm Ái 4cm, Vừa Cute Vừa Cá Tính Cho Phong Cách Hằng Ngày",
+      "haravan_id": 1070051657,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The PanoX Anta | Kính bơi góc rộng cao cấp, tầm nhìn vượt trội, chống lóa toàn cảnh, thấu kính HD, chống tia UV, đa lớp chống sương mù, đệm mắt êm nhẹ",
+      "haravan_id": 1067403396,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The PeakStrip ANTA | Dây Kháng Lực Đa Năng, Hỗ Trợ Cải Thiện Sức Mạnh, Phục Hồi Sau Chấn Thương",
+      "haravan_id": 1068037995,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The PickFit Mizuno | Đai bảo vệ khuỷu tay Mizuno cao cấp, thoáng khí đàn hồi, co giãn 4 chiều chuyên dụng cho Pickleball",
+      "haravan_id": 1070069739,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The Pivot | Giá đỡ laptop chắc chắn, dễ dàng chỉnh cao góc",
+      "haravan_id": 1065191031,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The Pod | Bảng số điện thoại cho xe hơi",
+      "haravan_id": 1063775984,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The Poison Fang Veidoorn | Giày Thể Thao Thời Trang, Thiết Kế Độc Đáo Cá Tính, Chống Trượt, Thoáng Khí, Giảm Chấn, Nâng Tầm Phong Cách",
+      "haravan_id": 1068274829,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The Push | Ván chống đẩy đa năng, chắc chắn, hỗ trợ tập cơ hiệu quả",
+      "haravan_id": 1063641025,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The Pyramid | Giá đỡ điện thoại MagSafe gắn táp lô, xoay 360°, chắc chắn",
+      "haravan_id": 1063783506,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The Roadster Crayon Friends | Bộ Sưu Tập Dép Tương Lai Với Thiết Kế Đế Bánh Xe Đường Trường, Êm Như Mây, Sải Bước Tự Do, Tỏa Sáng Cá Tính",
+      "haravan_id": 1069846076,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The RunPack ANTA | Túi Đeo Hông Thể Thao TPU Chống Thấm, Nhỏ Gọn, Dây Đeo Linh Hoạt, Đa Năng, Nhẹ & Bền, Phong Cách Mọi Hành Trình",
+      "haravan_id": 1067856800,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The SafeRush Mizuno | Đai Bảo Vệ Đùi Ngăn Ngừa Chấn Thương, Thoáng Khí, Hỗ Trợ Lưu Thông Máu, Giảm Căng Cơ Khi Vận Động Cường Độ Cao",
+      "haravan_id": 1067210781,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The SafeStride RGR | Ống Bảo Vệ Bắp Chân, Hỗ Trợ Ổn Định Cơ Bắp, Ngăn Chuột Rút, Tăng Hiệu Suất Vận Động",
+      "haravan_id": 1067981125,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The Shark2 RGR | Bộ sưu tập dép thời trang cá mập độc bản phong cách cá tính & độc đáo dành riêng mùa hè 2025",
+      "haravan_id": 1068096096,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The Shark3 RGR | Bộ sưu tập dép thời trang cá mập độc bản cá tính & độc đáo dành riêng mùa hè 2025",
+      "haravan_id": 1067898663,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The SharkX RGR | Bộ sưu tập dép thời trang cá mập độc bản phong cách cá tính & độc đáo dành riêng mùa hè 2025",
+      "haravan_id": 1068064001,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The Sola GJ | Mặt Nạ Chống Nắng Cao Cấp Tích Hợp Công Nghệ Q-Sun PRO & Q-Apathetic, Chống UV Chuyên Dụng Cho Thể Thao Ngoài Trời [MUA 02 GIẢM 100K]",
+      "haravan_id": 1066748409,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The SportSafe Mizuno - Đai Bó Khuỷu Tay Mizuno Thoáng Khí, Đàn Hồi & Chống Thấm",
+      "haravan_id": 1065106208,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The StandX | Giá đỡ điện thoại, ipad LISEN",
+      "haravan_id": 1063783123,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The StarFit | Băng Bảo Vệ Cổ Chân Mizuno Công Nghệ Đệt 5D, Mỏng Nhẹ Tựa Không, Hỗ Trợ Khớp Chuyên Dụng Thể Thao",
+      "haravan_id": 1071576626,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The StarShip Yassia | Bộ Sưu Tập Dép Cảm Hứng Từ Phi Thuyền Không Gian, Thiết Kế Chunky Platform,  Phong Cách Trendy Footwear Độc Đáo, Dấu Ấn Giới Trẻ 2025",
+      "haravan_id": 1068846079,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The StrikeIN RGR | Đai Bảo Vệ Bắp Tay Chuyên Dụng, Giảm Áp Lực Lên Khớp Và Cơ Bắp, Thoáng Khí, Đàn Hồi, Hỗ Trợ Vận Động Hiệu Quả Với Chất Liệu TPU Siêu Bền",
+      "haravan_id": 1066995531,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The Swing | Giá đỡ điện thoại hộc để cốc, xoay 360°, chắc chắn, tiện lợi",
+      "haravan_id": 1063784027,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The Teddy Bear | Bộ Gối Tựa Lưng & Cổ Công Thái Học",
+      "haravan_id": 1071685629,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The Tideline Canvas Veidoorn | Bộ Sưu Tập Dép Thời Trang Mang Cảm Hứng Từ Thiên Nhiên Hoang Dã, Chiến Binh Tối Giản – Êm Ái, Linh Hoạt, Tự Tin Làm Chủ Mọi Địa Hình.",
+      "haravan_id": 1069086896,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The Vedn LB Veidoorn  Bộ Sưu Tập Dép Thể Thao, Chống Trượt, Thiết Kế Hiện Đại, Phong Cách Tối Giản, Phù Hợp Mọi Hoạt Động",
+      "haravan_id": 1068815945,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The Vedn Unfetered Veidoorn | Bộ sưu tập dép thời trang phong cách đường phố trẻ trung, năng động cho mùa hè 2025",
+      "haravan_id": 1068351901,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The VentX | Giá đỡ điện thoại MagSafe cho ô tô, chắc chắn, tản nhiệt tốt",
+      "haravan_id": 1063782433,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The WaveCap Anta | Mũ Bơi Chuyên Dụng Cho Phụ Nữ Tóc Dài, Chất Liệu Silicone Cao Cấp, Co Giãn Chống Trượt, Cải Thiện Hiệu Suất Bơi",
+      "haravan_id": 1067465022,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The ZenK Mizuno | Đai bảo vệ khớp gối, giảm áp lực sụn chêm, chống căng cơ, phòng tránh chấn thương, hỗ trợ phục hồi",
+      "haravan_id": 1064866131,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 The ZenK Premium | Đai Bảo Vệ Đầu Gối Mizuno 135° Tối Ưu",
+      "haravan_id": 1066676452,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 Ulefone Power Armor 16S | Điện Thoại Di Động Pin Khủng Loa Chất Chuyên Dụng (9600 mAh, 122dB)",
+      "haravan_id": 1065106787,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 Ulefone Power Armor 24 | Điện thoại pin trâu 22.000 mAh, du lịch thoả sức",
+      "haravan_id": 1065191097,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+    {
+      "_comment": "📝 Ulefone Power Armor X12 | Điện Thoại Di Động Dã Chiến Chống Nước Chuyên Dụng",
+      "haravan_id": 1065628437,
+      "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
+      "target_audience": "[Mô tả khách hàng mục tiêu: độ tuổi, nghề nghiệp, nhu cầu cụ thể]",
+      "faq": [
+        {
+          "question": "[Câu hỏi thường gặp 1]?",
+          "answer": "[Câu trả lời chi tiết]"
+        },
+        {
+          "question": "[Câu hỏi thường gặp 2]?",
+          "answer": "[Câu trả lời chi tiết]"
+        }
+      ],
+      "specifications": {
+        "Xuất xứ": "[Nước sản xuất]",
+        "Chất liệu": "[Vật liệu chính]",
+        "Kích thước": "[Thông số kích thước]"
+      },
+      "shopee_url": null,
+      "tiktok_url": null
+    },
+  ]
+}

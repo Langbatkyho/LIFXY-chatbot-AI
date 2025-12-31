@@ -27,6 +27,7 @@ File `bulk-update-all-products.json` sẽ có cấu trúc:
 {
   "updates": [
     {
+      "_comment": "📝 Bảo hiểm Trách nhiệm dân sự bắt buộc dành cho xe ô tô (dưới 6 chỗ ngồi)",
       "haravan_id": 1063058069,
       "usp": "✓ [ĐIỂM NỔI BẬT 1]\n✓ [ĐIỂM NỔI BẬT 2]\n✓ [ĐIỂM NỔI BẬT 3]",
       "target_audience": "[Mô tả khách hàng mục tiêu]",
@@ -53,6 +54,8 @@ File `bulk-update-all-products.json` sẽ có cấu trúc:
 ### **Bước 2: Điền thông tin từng sản phẩm**
 
 Mở file `bulk-update-all-products.json` và điền thông tin:
+
+> **💡 Lưu ý:** Field `_comment` chứa tên sản phẩm để dễ phân biệt, **không được gửi lên API** (API sẽ tự động bỏ qua field này).
 
 #### **2.1. USP - Unique Selling Points**
 - 3-5 điểm nổi bật nhất của sản phẩm
