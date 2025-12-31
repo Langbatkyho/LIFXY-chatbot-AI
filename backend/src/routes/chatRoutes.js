@@ -27,6 +27,30 @@ function extractKeywords(message) {
 }
 
 /**
+ * Smart search for car insurance based on seat count
+ */
+function findInsuranceBySeats(message) {
+  // Extract number of seats from message
+  const seatMatch = message.match(/(\d+)\s*chỗ/i);
+  if (!seatMatch) return null;
+  
+  const seats = parseInt(seatMatch[1]);
+  
+  // Map seats to insurance category
+  if (seats < 6) {
+    return 'dưới 6 chỗ';
+  } else if (seats >= 6 && seats <= 11) {
+    return '6-11 chỗ';
+  } else if (seats >= 12 && seats <= 24) {
+    return '12-24 chỗ';
+  } else if (seats > 24) {
+    return 'trên 24 chỗ';
+  }
+  
+  return null;
+}
+
+/**
  * POST /api/chat/message
  * RAG-enhanced chat endpoint with conversation history
  */
@@ -56,6 +80,13 @@ router.post('/message', async (req, res) => {
     // Step 3: Extract meaningful keywords from combined context
     const keywords = extractKeywords(contextMessage);
     console.log('🔍 Extracted keywords from context:', keywords);
+
+    // Smart insurance search: detect seat count and add specific keyword
+    const insuranceSeats = findInsuranceBySeats(contextMessage);
+    if (insuranceSeats) {
+      console.log(`🚗 Detected car insurance query for: ${insuranceSeats}`);
+      keywords.unshift(insuranceSeats);
+    }
 
     // Step 4: Search for relevant products (Retrieval)
     let relevantProducts = [];
