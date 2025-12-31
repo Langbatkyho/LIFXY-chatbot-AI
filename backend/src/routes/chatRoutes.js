@@ -111,6 +111,16 @@ router.post('/message', async (req, res) => {
       }
     }
 
+    // Step 4.5: If still no products found, reuse products from recent conversation
+    if (relevantProducts.length === 0 && history.length > 0) {
+      // Get products from most recent chat message
+      const recentChat = history[history.length - 1];
+      if (recentChat.referenced_products && recentChat.referenced_products.length > 0) {
+        console.log(`♻️ Reusing ${recentChat.referenced_products.length} products from conversation history`);
+        relevantProducts = recentChat.referenced_products;
+      }
+    }
+
     // Step 5: Build RAG prompt with retrieved products and conversation history
     const { systemPrompt, hasProducts } = buildRAGPrompt(message, relevantProducts, history);
     
