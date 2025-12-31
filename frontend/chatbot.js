@@ -65,6 +65,32 @@
       return `session_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
     }
 
+    // Parse Markdown to HTML for rich text display
+    parseMarkdown(text) {
+      if (!text) return '';
+      
+      let html = text
+        // Bold: **text** or __text__
+        .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+        .replace(/__(.+?)__/g, '<strong>$1</strong>')
+        
+        // Links: [text](url)
+        .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
+        
+        // Line breaks
+        .replace(/\n/g, '<br/>')
+        
+        // Bullet points: • or -
+        .replace(/^[•\-]\s+(.+)$/gm, '<li>$1</li>');
+      
+      // Wrap <li> in <ul> if present
+      if (html.includes('<li>')) {
+        html = html.replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>');
+      }
+      
+      return html;
+    }
+
     render() {
       // Toggle button
       const toggleBtn = document.createElement('button');
@@ -175,7 +201,8 @@
 
       const contentEl = document.createElement('div');
       contentEl.className = 'message-content';
-      contentEl.textContent = content;
+      // Use innerHTML with parsed Markdown instead of textContent
+      contentEl.innerHTML = this.parseMarkdown(content);
 
       messageEl.appendChild(contentEl);
 
